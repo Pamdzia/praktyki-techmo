@@ -1,4 +1,4 @@
-# praktyki-techmo
+# Praktyki w Techmo
 
 # Temat pracy
 
