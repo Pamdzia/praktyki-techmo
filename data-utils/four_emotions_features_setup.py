@@ -4,17 +4,22 @@ import numpy as np
 import librosa
 import scipy.signal
 from tqdm import tqdm
+import argparse
 
-# SCIEZKII
-base_path = r'C:\Users\Asus\Desktop\PRAMCOWY_PROJEMKT\praktyki-techmo\downloaded_data\RAVDESS'
-csv_path = r'C:\Users\Asus\Desktop\PRAMCOWY_PROJEMKT\praktyki-techmo\data-utils\four_emotions_RAVDESS.csv'
-output_dir = r'C:\Users\Asus\Desktop\PRAMCOWY_PROJEMKT\praktyki-techmo\four_emotions_csvs_all'
+# Argumenty wiersza poleceń
+parser = argparse.ArgumentParser(description='Ekstrakcja cech z plików audio.')
+parser.add_argument('--base_path', default='../downloaded_data/RAVDESS', help='Podstawowy katalog z plikami audio')
+parser.add_argument('--csv_path', default='../data-utils/four_emotions_RAVDESS.csv', help='Ścieżka do pliku CSV z danymi')
+parser.add_argument('--output_dir', default='../four_emotions_csvs_all', help='Katalog wyjściowy na pliki z cechami')
 
-BASE_PATH = os.getenv('BASE_PATH', base_path)
-CSV_PATH = os.getenv('CSV_PATH', csv_path)
-OUTPUT_DIR = os.getenv('OUTPUT_DIR', output_dir)
+args = parser.parse_args()
 
-# sciekza do pliku wyjsciowego
+# Ścieżki
+BASE_PATH = args.base_path
+CSV_PATH = args.csv_path
+OUTPUT_DIR = args.output_dir
+
+# Ścieżka do pliku wyjściowego
 csv_filename = os.path.basename(CSV_PATH)
 output_filename = csv_filename.replace('.csv', '_features.csv')
 OUTPUT_PATH = os.path.join(OUTPUT_DIR, output_filename)
@@ -113,3 +118,9 @@ cols = [col for col in data.columns if col != 'full_path'] + [col for col in fea
 features_df = features_df[cols]
 
 features_df.to_csv(OUTPUT_PATH, index=False)
+
+# Usuwanie pliku CSV po zakończeniu przetwarzania
+os.remove(CSV_PATH)
+
+print(f"Plik {CSV_PATH} został przetworzony i usunięty.")
+print("Cechy zostały wyodrębnione i zapisane.")

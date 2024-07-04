@@ -1,8 +1,15 @@
 import os
 import csv
+import argparse
+
+# Argumenty wiersza poleceń
+parser = argparse.ArgumentParser(description='Tworzenie pliku CSV z danymi RAVDESS.')
+parser.add_argument('--base_directory', default=r'../downloaded_data/RAVDESS', help='Podstawowy katalog RAVDESS')
+
+args = parser.parse_args()
 
 # Podstawowy katalog
-base_directory = r'C:\Users\Asus\Desktop\PRAMCOWY_PROJEMKT\praktyki-techmo\downloaded_data\RAVDESS'
+base_directory = args.base_directory
 
 columns = ['Relative Path', 'Modality', 'Vocal Channel', 'Emotion', 'Intensity', 'Statement', 'Repetition', 'Actor', 'Gender']
 
