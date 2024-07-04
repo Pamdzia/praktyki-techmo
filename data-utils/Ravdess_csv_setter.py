@@ -1,7 +1,8 @@
 import os
 import csv
 
-base_directory = r'C:\Users\Asus\Desktop\PRAMCOWY_PROJEMKT\datasets\RAVDESS'
+# Podstawowy katalog
+base_directory = r'C:\Users\Asus\Desktop\PRAMCOWY_PROJEMKT\praktyki-techmo\downloaded_data\RAVDESS'
 
 columns = ['Relative Path', 'Modality', 'Vocal Channel', 'Emotion', 'Intensity', 'Statement', 'Repetition', 'Actor', 'Gender']
 
@@ -21,18 +22,28 @@ def decode_filename(filename):
         'Gender': 'Male' if int(parts[6]) % 2 != 0 else 'Female'
     }
 
-with open('dataset_info.csv', 'w', newline='', encoding='utf-8') as csvfile:
-    writer = csv.DictWriter(csvfile, fieldnames=columns)
-    writer.writeheader()
+# Iterowanie przez podfoldery w base_directory
+for folder_name in os.listdir(base_directory):
+    folder_path = os.path.join(base_directory, folder_name)
+    
+    if os.path.isdir(folder_path):
+        csv_filename = f'{folder_name}.csv'
+        csv_path = os.path.join(base_directory, csv_filename)
+        
+        with open(csv_path, 'w', newline='', encoding='utf-8') as csvfile:
+            writer = csv.DictWriter(csvfile, fieldnames=columns)
+            writer.writeheader()
 
-    for actor_id in range(1, 25):  
-        actor_folder = f'Actor_{str(actor_id).zfill(2)}'
-        actor_path = os.path.join(base_directory, actor_folder)
-        for filename in os.listdir(actor_path):
-            if filename.endswith('.wav'):
-                relative_path = f'{actor_folder}/{filename}'
-                details = decode_filename(filename)
-                details['Relative Path'] = relative_path
-                writer.writerow(details)
+            for actor_id in range(1, 25):  
+                actor_folder = f'Actor_{str(actor_id).zfill(2)}'
+                actor_path = os.path.join(folder_path, actor_folder)
+                
+                if os.path.exists(actor_path):
+                    for filename in os.listdir(actor_path):
+                        if filename.endswith('.wav'):
+                            relative_path = f'{folder_name}/{actor_folder}/{filename}'
+                            details = decode_filename(filename)
+                            details['Relative Path'] = relative_path
+                            writer.writerow(details)
 
 print("Ravdess dataset info is ready.")
