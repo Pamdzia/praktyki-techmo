@@ -1,15 +1,20 @@
 import os
 import pandas as pd
 from sklearn.model_selection import train_test_split
+import argparse
 
-# SCIEZKII
-csv_path = r'C:\Users\Asus\Desktop\PRAMCOWY_PROJEMKT\praktyki-techmo\four_emotions_csvs_all\four_emotions_RAVDESS_features.csv'
-output_dir = r'C:\Users\Asus\Desktop\PRAMCOWY_PROJEMKT\praktyki-techmo\four-emotions-csv-sets'
+# Argumenty wiersza poleceń
+parser = argparse.ArgumentParser(description='Podział danych na zbiory treningowy, walidacyjny i testowy.')
+parser.add_argument('--csv_path', default='../four_emotions_csvs_all/four_emotions_RAVDESS_features.csv', help='Ścieżka do pliku CSV z danymi')
+parser.add_argument('--output_dir', default='../four-emotions-csv-sets', help='Katalog wyjściowy na pliki z danymi')
 
-CSV_PATH = os.getenv('CSV_PATH', csv_path)
-OUTPUT_DIR = os.getenv('OUTPUT_DIR', output_dir)
+args = parser.parse_args()
 
-# sciezka do pliku wyjsciowego na podstawie nazwy sciezki wejsciowj
+# Ścieżki
+CSV_PATH = args.csv_path
+OUTPUT_DIR = args.output_dir
+
+# Ścieżka do pliku wyjściowego na podstawie nazwy ścieżki wejściowej
 csv_filename = os.path.basename(CSV_PATH)
 
 train_output_filename = 'train_' + csv_filename

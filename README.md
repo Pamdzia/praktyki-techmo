@@ -22,7 +22,9 @@ Do pracy nad emocjami wykorzystywane są dane z niniejszych zbiorów
 
 # Przygotowanie danych
 
-Skrypt bash przygotowujący datasety RAVDESS oraz nEMO wraz z ich pobraniem i uzyskaniem cech z wykorzystaniem MFCC jest podstawą issue [#9](https://github.com/Pamdzia/praktyki-techmo/issues/9). Aby ręcznie przygotować zbiory należy:
+Skrypt bash przygotowujący datasety RAVDESS oraz nEMO wraz z ich pobraniem i uzyskaniem cech z wykorzystaniem MFCC znajduje się w *data-utils*, posiada on 5 zmiennych do ustalenia ściezek gdzie zostaną pobrane zipy z danymi, gdzie zapiszemy rozpakowane datasety oraz gdzie będą się znajdować csvki wynikowe, zarówno te pełne jak i pdozielone na sety train, dev, test.
+
+Aby ręcznie przygotować zbiory należy:
 - Wejść do folderu *data-utils*
 - Uruchomić skrypt *data_downloader.py* podając ścieżkę do której chemy pobrać zbiory danych
 - Uruchomić skrypt *Ravdess_csv_setter.py*, spowodowane jest to tym iż informacje o plikach znajdują się jedynie na stronie z datasetem, gdy nEMO pobierane jest wraz z plikiem .tsv
