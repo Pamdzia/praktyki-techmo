@@ -34,7 +34,7 @@ Aby ręcznie przygotować zbiory należy:
 
 # Tabele z danymi dla nEMO oraz RAVDESS podzielonymi na zbiory train, dev oraz test
 
-Podział zbioru danych RAVDESS (calm jako neutral)
+## Podział zbioru danych RAVDESS (calm jako neutral)
 
 ## Original dataset distribution:
 | Emotion | Count |
@@ -72,7 +72,7 @@ Podział zbioru danych RAVDESS (calm jako neutral)
 Total number of files removed during balancing and equalizing: 0
 
 
-Podział zbioru danych nEMO
+## Podział zbioru danych nEMO
 
 ## Original dataset distribution:
 | Emotion | Count |
