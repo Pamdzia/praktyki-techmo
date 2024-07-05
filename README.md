@@ -33,3 +33,5 @@ Aby ręcznie przygotować zbiory należy:
 - Uruchomić skrypt *four_emotions_data_division*, skrypt ten odpowiada za podział korpusów na zbiory train, dev, test wykonując wyrównanie danych, aby w zbiorze testowym znajdowało się tyle samo próbek dla każdej emocji
 
 # Tabele z danymi dla nEMO oraz RAVDESS podzielonymi na zbiory train, dev oraz test
+
+Work in progress po ustaleniu dokładnego podziału informacje zostaną tutaj umieszczone
