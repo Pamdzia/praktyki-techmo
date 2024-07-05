@@ -28,7 +28,7 @@ nemo_data = nemo_data[['file_id', 'emotion', 'speaker_id', 'gender']]
 nemo_data.columns = ['relative path', 'emotion', 'actor', 'gender']
 
 # Przetwarzanie plików RAVDESS
-emotions_to_keep = ['neutral', 'happy', 'angry', 'sad']
+emotions_to_keep = ['calm', 'happy', 'angry', 'sad']
 
 ravdess_song_data = ravdess_song_data[ravdess_song_data['Emotion'].isin(emotions_to_keep)]
 ravdess_speech_data = ravdess_speech_data[ravdess_speech_data['Emotion'].isin(emotions_to_keep)]
@@ -43,6 +43,10 @@ ravdess_speech_data['gender'] = ravdess_speech_data['gender'].str.lower()
 
 # Połączenie plików RAVDESS
 ravdess_combined = pd.concat([ravdess_song_data, ravdess_speech_data])
+
+emotion_map = {'calm': 'neutral'}
+ravdess_combined['emotion'] = ravdess_combined['emotion'].replace(emotion_map)
+
 
 # Zapis
 nemo_data.to_csv('four_emotions_nEMO.csv', index=False)
