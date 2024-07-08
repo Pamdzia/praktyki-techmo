@@ -6,8 +6,8 @@ from sklearn.metrics import accuracy_score, f1_score
 from sklearn.preprocessing import LabelEncoder, StandardScaler
 
 # Załadowanie danych z plików CSV
-train_data = pd.read_csv(r'C:\Users\Asus\Desktop\PRAMCOWY_PROJEMKT\clean\praktyki-techmo\four-emotions-csv-sets\train_four_emotions_nEMO_features.csv')
-test_data = pd.read_csv(r'C:\Users\Asus\Desktop\PRAMCOWY_PROJEMKT\clean\praktyki-techmo\four-emotions-csv-sets\test_four_emotions_nEMO_features.csv')
+train_data = pd.read_csv(r'C:\Users\Asus\Desktop\PRAMCOWY_PROJEMKT\clean\praktyki-techmo\four-emotions-csv-sets\train_four_emotions_RAVDESS_features.csv')
+test_data = pd.read_csv(r'C:\Users\Asus\Desktop\PRAMCOWY_PROJEMKT\clean\praktyki-techmo\four-emotions-csv-sets\test_four_emotions_RAVDESS_features.csv')
 
 # Funkcja do konwersji list w kolumnach do rzeczywistych list
 def convert_columns(data):
