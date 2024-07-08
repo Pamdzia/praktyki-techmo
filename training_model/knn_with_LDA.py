@@ -4,9 +4,10 @@ from sklearn.model_selection import GridSearchCV
 from sklearn.neighbors import KNeighborsClassifier
 from sklearn.metrics import accuracy_score, f1_score
 from sklearn.preprocessing import LabelEncoder, StandardScaler
+from sklearn.discriminant_analysis import LinearDiscriminantAnalysis
 
 # Załadowanie danych z plików CSV
-train_data = pd.read_csv(r'C:\Users\Asus\Desktop\PRAMCOWY_PROJEMKT\clean\praktyki-techmo\four-emotions-csv-sets\train_four_emotions_RAVDESS_features.csv')
+train_data = pd.read_csv(r'C:\Users\Asus\Desktop\PRAMCOWY_PROJEMKT\clean\praktyki-techmo\four-emotions-csv-sets\train_four_emotions_nEMO_features.csv')
 test_data = pd.read_csv(r'C:\Users\Asus\Desktop\PRAMCOWY_PROJEMKT\clean\praktyki-techmo\four-emotions-csv-sets\test_four_emotions_RAVDESS_features.csv')
 test_data_2 = pd.read_csv(r'C:\Users\Asus\Desktop\PRAMCOWY_PROJEMKT\clean\praktyki-techmo\four-emotions-csv-sets\test_four_emotions_nEMO_features.csv')
 
@@ -55,6 +56,12 @@ X_train = scaler.fit_transform(X_train)
 X_test = scaler.transform(X_test)
 X_test_2 = scaler.transform(X_test_2)
 
+# LDA preprocessing
+lda = LinearDiscriminantAnalysis(n_components=3)
+X_train_lda = lda.fit_transform(X_train, y_train)
+X_test_lda = lda.transform(X_test)
+X_test_2_lda = lda.transform(X_test_2)
+
 # Definiowanie modelu kNN i parametrów do grid search
 knn = KNeighborsClassifier()
 param_grid = {
@@ -64,7 +71,7 @@ param_grid = {
 
 # Przeprowadzenie grid search z F1-score
 grid_search = GridSearchCV(knn, param_grid, cv=5, scoring='f1_macro')
-grid_search.fit(X_train, y_train)
+grid_search.fit(X_train_lda, y_train)
 
 # Wyświetlenie najlepszych parametrów
 print("Best parameters found: ", grid_search.best_params_)
@@ -72,11 +79,11 @@ print("Best cross-validation F1-score: ", grid_search.best_score_)
 
 # Testowanie modelu na zestawie testowym
 best_knn = grid_search.best_estimator_
-y_pred = best_knn.predict(X_test)
+y_pred = best_knn.predict(X_test_lda)
 print("Test set accuracy (RAVDESS): ", accuracy_score(y_test, y_pred))
 print("Test set F1-score (RAVDESS): ", f1_score(y_test, y_pred, average='macro'))
 
 # Testowanie modelu na drugim zestawie testowym
-y_pred_2 = best_knn.predict(X_test_2)
+y_pred_2 = best_knn.predict(X_test_2_lda)
 print("Test set 2 accuracy (nEMO): ", accuracy_score(y_test_2, y_pred_2))
 print("Test set 2 F1-score (nEMO): ", f1_score(y_test_2, y_pred_2, average='macro'))

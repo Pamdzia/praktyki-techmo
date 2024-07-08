@@ -1,7 +1,7 @@
 import numpy as np
 import pandas as pd
 from sklearn.model_selection import GridSearchCV
-from sklearn.neighbors import KNeighborsClassifier
+from sklearn.ensemble import RandomForestClassifier
 from sklearn.metrics import accuracy_score, f1_score
 from sklearn.preprocessing import LabelEncoder, StandardScaler
 
@@ -55,15 +55,19 @@ X_train = scaler.fit_transform(X_train)
 X_test = scaler.transform(X_test)
 X_test_2 = scaler.transform(X_test_2)
 
-# Definiowanie modelu kNN i parametrów do grid search
-knn = KNeighborsClassifier()
+# Definiowanie modelu Random Forest i parametrów do grid search
+rf = RandomForestClassifier(random_state=42)
 param_grid = {
-    'n_neighbors': np.arange(1, 31),
-    'metric': ['euclidean', 'manhattan', 'minkowski', 'chebyshev', 'hamming', 'canberra', 'braycurtis', 'cosine', 'correlation']
+    'n_estimators': [50, 100, 200, 300, 400],  # Więcej wartości
+    'max_features': [None, 'sqrt', 'log2'],  # Więcej wartości
+    'max_depth': [None, 10, 20, 30, 40, 50, 60, 70],  # Więcej wartości
+    'min_samples_split': [2, 5, 10, 15],  # Więcej wartości
+    'min_samples_leaf': [1, 2, 4, 6],  # Więcej wartości
+    'bootstrap': [True, False]  # Dodanie bootstrap jako parametr
 }
 
 # Przeprowadzenie grid search z F1-score
-grid_search = GridSearchCV(knn, param_grid, cv=5, scoring='f1_macro')
+grid_search = GridSearchCV(rf, param_grid, cv=5, scoring='f1_macro', n_jobs=-1)
 grid_search.fit(X_train, y_train)
 
 # Wyświetlenie najlepszych parametrów
@@ -71,12 +75,12 @@ print("Best parameters found: ", grid_search.best_params_)
 print("Best cross-validation F1-score: ", grid_search.best_score_)
 
 # Testowanie modelu na zestawie testowym
-best_knn = grid_search.best_estimator_
-y_pred = best_knn.predict(X_test)
+best_rf = grid_search.best_estimator_
+y_pred = best_rf.predict(X_test)
 print("Test set accuracy (RAVDESS): ", accuracy_score(y_test, y_pred))
 print("Test set F1-score (RAVDESS): ", f1_score(y_test, y_pred, average='macro'))
 
 # Testowanie modelu na drugim zestawie testowym
-y_pred_2 = best_knn.predict(X_test_2)
+y_pred_2 = best_rf.predict(X_test_2)
 print("Test set 2 accuracy (nEMO): ", accuracy_score(y_test_2, y_pred_2))
 print("Test set 2 F1-score (nEMO): ", f1_score(y_test_2, y_pred_2, average='macro'))
