@@ -10,7 +10,7 @@ from tqdm import tqdm
 import joblib
 
 # Define the default experiment name
-default_experiment_name = 'random_forrest_RAVDESS'
+default_experiment_name = 'random_forest_RAVDESS'
 
 # Parse command-line argument for experiment name
 if len(sys.argv) > 1:
@@ -29,7 +29,7 @@ train_data_paths = [
 ]
 test_data_paths = [
     r'../four-emotions-csv-sets/test_four_emotions_RAVDESS_features.csv',
-    r'../four-emotions-csv-sets/test_four_emotions_NEMO_features.csv'
+    r'../four-emotions-csv-sets/test_four_emotions_nEMO_features.csv'
 ]
 
 # Function to load and combine datasets if more than one file exists
