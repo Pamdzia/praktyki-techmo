@@ -11,7 +11,7 @@ from tqdm import tqdm
 import joblib
 
 # Definiowanie domyślnej nazwy eksperymentu
-default_experiment_name = 'knn_lda_RAVDESS'
+default_experiment_name = 'knn_lda_connected'
 
 # Parsowanie argumentu wiersza poleceń dla nazwy eksperymentu
 if len(sys.argv) > 1:
@@ -26,11 +26,12 @@ tqdm.pandas()  # Przygotowanie pandas do używania tqdm dla pasków postępu
 
 # Ścieżki do plików danych
 train_data_paths = [
-    r'../four-emotions-csv-sets/train_four_emotions_RAVDESS_features.csv'
+    r'../four-emotions-csv-sets/train_four_emotions_RAVDESS_features.csv',
+    r'../four-emotions-csv-sets/train_four_emotions_nEMO_features.csv'
 ]
 test_data_paths = [
     r'../four-emotions-csv-sets/test_four_emotions_RAVDESS_features.csv',
-    r'../four-emotions-csv-sets/test_four_emotions_NEMO_features.csv'
+    r'../four-emotions-csv-sets/test_four_emotions_nEMO_features.csv'
 ]
 
 # Funkcja do ładowania i łączenia zbiorów danych, jeśli istnieje więcej niż jeden plik
