@@ -10,7 +10,7 @@ from tqdm import tqdm
 import joblib
 
 # Define the default experiment name
-default_experiment_name = 'knn_nEMO'
+default_experiment_name = 'knn_connected'
 
 # Parse command-line argument for experiment name
 if len(sys.argv) > 1:
@@ -25,11 +25,12 @@ tqdm.pandas()  # Prepare pandas to use tqdm for progress bars
 
 # Paths to data files
 train_data_paths = [
+    r'../four-emotions-csv-sets/train_four_emotions_RAVDESS_features.csv',
     r'../four-emotions-csv-sets/train_four_emotions_nEMO_features.csv'
 ]
 test_data_paths = [
     r'../four-emotions-csv-sets/test_four_emotions_RAVDESS_features.csv',
-    r'../four-emotions-csv-sets/test_four_emotions_NEMO_features.csv'
+    r'../four-emotions-csv-sets/test_four_emotions_nEMO_features.csv'
 ]
 
 # Function to load and combine datasets if more than one file exists
