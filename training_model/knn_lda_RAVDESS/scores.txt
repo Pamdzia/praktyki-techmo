@@ -1,0 +1,2 @@
+Best parameters found: {'metric': 'chebyshev', 'n_neighbors': 30}
+Best cross-validation F1-score: 0.7757445102752729
