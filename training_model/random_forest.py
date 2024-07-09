@@ -25,11 +25,11 @@ tqdm.pandas()  # Prepare pandas to use tqdm for progress bars
 
 # Load data from CSV files
 train_data_paths = [
-    r'..\four-emotions-csv-sets\train_four_emotions_RAVDESS_features.csv'
+    r'../four-emotions-csv-sets/train_four_emotions_RAVDESS_features.csv'
 ]
 test_data_paths = [
-    r'..\four-emotions-csv-sets\test_four_emotions_RAVDESS_features.csv',
-    r'..\four-emotions-csv-sets\test_four_emotions_NEMO_features.csv'
+    r'../four-emotions-csv-sets/test_four_emotions_RAVDESS_features.csv',
+    r'../four-emotions-csv-sets/test_four_emotions_NEMO_features.csv'
 ]
 
 # Function to load and combine datasets if more than one file exists

@@ -26,11 +26,11 @@ tqdm.pandas()  # Przygotowanie pandas do używania tqdm dla pasków postępu
 
 # Ścieżki do plików danych
 train_data_paths = [
-    r'..\four-emotions-csv-sets\train_four_emotions_RAVDESS_features.csv'
+    r'../four-emotions-csv-sets/train_four_emotions_RAVDESS_features.csv'
 ]
 test_data_paths = [
-    r'..\four-emotions-csv-sets\test_four_emotions_RAVDESS_features.csv',
-    r'..\four-emotions-csv-sets\test_four_emotions_NEMO_features.csv'
+    r'../four-emotions-csv-sets/test_four_emotions_RAVDESS_features.csv',
+    r'../four-emotions-csv-sets/test_four_emotions_NEMO_features.csv'
 ]
 
 # Funkcja do ładowania i łączenia zbiorów danych, jeśli istnieje więcej niż jeden plik
