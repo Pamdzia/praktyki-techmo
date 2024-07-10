@@ -1,0 +1,148 @@
+emotion,precision,recall,f1-score,support,accuracy,experiment_name
+angry,0.8,1.0,0.8888888888888888,4.0,1.0,knn_RAVDESS
+happy,0.3333333333333333,0.75,0.46153846153846156,4.0,0.75,knn_RAVDESS
+neutral,1.0,0.5,0.6666666666666666,4.0,0.5,knn_RAVDESS
+sad,1.0,0.0,0.0,4.0,0.0,knn_RAVDESS
+accuracy,0.5625,0.5625,0.5625,0.5625,0.5625,knn_RAVDESS
+macro avg,0.7833333333333333,0.5625,0.5042735042735043,16.0,,knn_RAVDESS
+weighted avg,0.7833333333333333,0.5625,0.5042735042735043,16.0,,knn_RAVDESS
+angry,0.5714285714285714,1.0,0.7272727272727273,4.0,1.0,knn_connected
+happy,1.0,0.25,0.4,4.0,0.25,knn_connected
+neutral,0.4,0.5,0.4444444444444444,4.0,0.5,knn_connected
+sad,0.3333333333333333,0.25,0.2857142857142857,4.0,0.25,knn_connected
+accuracy,0.5,0.5,0.5,0.5,0.5,knn_connected
+macro avg,0.5761904761904763,0.5,0.4643578643578644,16.0,,knn_connected
+weighted avg,0.5761904761904763,0.5,0.4643578643578644,16.0,,knn_connected
+angry,1.0,0.5,0.6666666666666666,4.0,0.5,knn_emo_db
+happy,0.6666666666666666,1.0,0.8,4.0,1.0,knn_emo_db
+neutral,1.0,0.75,0.8571428571428571,4.0,0.75,knn_emo_db
+sad,0.8,1.0,0.8888888888888888,4.0,1.0,knn_emo_db
+accuracy,0.8125,0.8125,0.8125,0.8125,0.8125,knn_emo_db
+macro avg,0.8666666666666667,0.8125,0.8031746031746032,16.0,,knn_emo_db
+weighted avg,0.8666666666666667,0.8125,0.8031746031746032,16.0,,knn_emo_db
+angry,0.25,1.0,0.4,4.0,1.0,knn_iemocap_connected
+happy,1.0,0.0,0.0,4.0,0.0,knn_iemocap_connected
+neutral,1.0,0.0,0.0,4.0,0.0,knn_iemocap_connected
+sad,1.0,0.0,0.0,4.0,0.0,knn_iemocap_connected
+accuracy,0.25,0.25,0.25,0.25,0.25,knn_iemocap_connected
+macro avg,0.8125,0.25,0.1,16.0,,knn_iemocap_connected
+weighted avg,0.8125,0.25,0.1,16.0,,knn_iemocap_connected
+angry,0.25,1.0,0.4,4.0,1.0,knn_iemocap_impro
+happy,1.0,0.0,0.0,4.0,0.0,knn_iemocap_impro
+neutral,1.0,0.0,0.0,4.0,0.0,knn_iemocap_impro
+sad,1.0,0.0,0.0,4.0,0.0,knn_iemocap_impro
+accuracy,0.25,0.25,0.25,0.25,0.25,knn_iemocap_impro
+macro avg,0.8125,0.25,0.1,16.0,,knn_iemocap_impro
+weighted avg,0.8125,0.25,0.1,16.0,,knn_iemocap_impro
+angry,0.25,1.0,0.4,4.0,1.0,knn_iemocap_script
+happy,1.0,0.0,0.0,4.0,0.0,knn_iemocap_script
+neutral,1.0,0.0,0.0,4.0,0.0,knn_iemocap_script
+sad,1.0,0.0,0.0,4.0,0.0,knn_iemocap_script
+accuracy,0.25,0.25,0.25,0.25,0.25,knn_iemocap_script
+macro avg,0.8125,0.25,0.1,16.0,,knn_iemocap_script
+weighted avg,0.8125,0.25,0.1,16.0,,knn_iemocap_script
+angry,0.5,1.0,0.6666666666666666,4.0,1.0,knn_lda_RAVDESS
+happy,1.0,0.25,0.4,4.0,0.25,knn_lda_RAVDESS
+neutral,1.0,0.0,0.0,4.0,0.0,knn_lda_RAVDESS
+sad,0.5714285714285714,1.0,0.7272727272727273,4.0,1.0,knn_lda_RAVDESS
+accuracy,0.5625,0.5625,0.5625,0.5625,0.5625,knn_lda_RAVDESS
+macro avg,0.7678571428571428,0.5625,0.4484848484848485,16.0,,knn_lda_RAVDESS
+weighted avg,0.7678571428571428,0.5625,0.4484848484848485,16.0,,knn_lda_RAVDESS
+angry,0.5714285714285714,1.0,0.7272727272727273,4.0,1.0,knn_lda_connected
+happy,1.0,0.25,0.4,4.0,0.25,knn_lda_connected
+neutral,1.0,0.0,0.0,4.0,0.0,knn_lda_connected
+sad,0.5,1.0,0.6666666666666666,4.0,1.0,knn_lda_connected
+accuracy,0.5625,0.5625,0.5625,0.5625,0.5625,knn_lda_connected
+macro avg,0.7678571428571428,0.5625,0.4484848484848485,16.0,,knn_lda_connected
+weighted avg,0.7678571428571428,0.5625,0.4484848484848485,16.0,,knn_lda_connected
+angry,1.0,1.0,1.0,4.0,1.0,knn_lda_emo_db
+happy,1.0,1.0,1.0,4.0,1.0,knn_lda_emo_db
+neutral,1.0,0.75,0.8571428571428571,4.0,0.75,knn_lda_emo_db
+sad,0.8,1.0,0.8888888888888888,4.0,1.0,knn_lda_emo_db
+accuracy,0.9375,0.9375,0.9375,0.9375,0.9375,knn_lda_emo_db
+macro avg,0.95,0.9375,0.9365079365079365,16.0,,knn_lda_emo_db
+weighted avg,0.95,0.9375,0.9365079365079365,16.0,,knn_lda_emo_db
+angry,0.25,1.0,0.4,4.0,1.0,knn_lda_iemocap_connected
+happy,1.0,0.0,0.0,4.0,0.0,knn_lda_iemocap_connected
+neutral,1.0,0.0,0.0,4.0,0.0,knn_lda_iemocap_connected
+sad,1.0,0.0,0.0,4.0,0.0,knn_lda_iemocap_connected
+accuracy,0.25,0.25,0.25,0.25,0.25,knn_lda_iemocap_connected
+macro avg,0.8125,0.25,0.1,16.0,,knn_lda_iemocap_connected
+weighted avg,0.8125,0.25,0.1,16.0,,knn_lda_iemocap_connected
+angry,0.25,1.0,0.4,4.0,1.0,knn_lda_iemocap_impro
+happy,1.0,0.0,0.0,4.0,0.0,knn_lda_iemocap_impro
+neutral,1.0,0.0,0.0,4.0,0.0,knn_lda_iemocap_impro
+sad,1.0,0.0,0.0,4.0,0.0,knn_lda_iemocap_impro
+accuracy,0.25,0.25,0.25,0.25,0.25,knn_lda_iemocap_impro
+macro avg,0.8125,0.25,0.1,16.0,,knn_lda_iemocap_impro
+weighted avg,0.8125,0.25,0.1,16.0,,knn_lda_iemocap_impro
+angry,0.25,1.0,0.4,4.0,1.0,knn_lda_iemocap_script
+happy,1.0,0.0,0.0,4.0,0.0,knn_lda_iemocap_script
+neutral,1.0,0.0,0.0,4.0,0.0,knn_lda_iemocap_script
+sad,1.0,0.0,0.0,4.0,0.0,knn_lda_iemocap_script
+accuracy,0.25,0.25,0.25,0.25,0.25,knn_lda_iemocap_script
+macro avg,0.8125,0.25,0.1,16.0,,knn_lda_iemocap_script
+weighted avg,0.8125,0.25,0.1,16.0,,knn_lda_iemocap_script
+angry,0.4444444444444444,1.0,0.6153846153846154,4.0,1.0,knn_lda_nEMO
+happy,1.0,0.0,0.0,4.0,0.0,knn_lda_nEMO
+neutral,1.0,0.0,0.0,4.0,0.0,knn_lda_nEMO
+sad,0.5714285714285714,1.0,0.7272727272727273,4.0,1.0,knn_lda_nEMO
+accuracy,0.5,0.5,0.5,0.5,0.5,knn_lda_nEMO
+macro avg,0.753968253968254,0.5,0.3356643356643357,16.0,,knn_lda_nEMO
+weighted avg,0.753968253968254,0.5,0.3356643356643357,16.0,,knn_lda_nEMO
+angry,0.42857142857142855,0.75,0.5454545454545454,4.0,0.75,knn_nEMO
+happy,0.0,0.0,0.0,4.0,0.0,knn_nEMO
+neutral,0.4,0.5,0.4444444444444444,4.0,0.5,knn_nEMO
+sad,0.3333333333333333,0.25,0.2857142857142857,4.0,0.25,knn_nEMO
+accuracy,0.375,0.375,0.375,0.375,0.375,knn_nEMO
+macro avg,0.29047619047619044,0.375,0.3189033189033189,16.0,,knn_nEMO
+weighted avg,0.29047619047619044,0.375,0.3189033189033189,16.0,,knn_nEMO
+angry,0.25,1.0,0.4,4.0,1.0,random_forest_RAVDESS
+happy,1.0,0.0,0.0,4.0,0.0,random_forest_RAVDESS
+neutral,1.0,0.0,0.0,4.0,0.0,random_forest_RAVDESS
+sad,1.0,0.0,0.0,4.0,0.0,random_forest_RAVDESS
+accuracy,0.25,0.25,0.25,0.25,0.25,random_forest_RAVDESS
+macro avg,0.8125,0.25,0.1,16.0,,random_forest_RAVDESS
+weighted avg,0.8125,0.25,0.1,16.0,,random_forest_RAVDESS
+angry,0.4444444444444444,1.0,0.6153846153846154,4.0,1.0,random_forest_connected
+happy,1.0,0.0,0.0,4.0,0.0,random_forest_connected
+neutral,1.0,0.0,0.0,4.0,0.0,random_forest_connected
+sad,0.5714285714285714,1.0,0.7272727272727273,4.0,1.0,random_forest_connected
+accuracy,0.5,0.5,0.5,0.5,0.5,random_forest_connected
+macro avg,0.753968253968254,0.5,0.3356643356643357,16.0,,random_forest_connected
+weighted avg,0.753968253968254,0.5,0.3356643356643357,16.0,,random_forest_connected
+angry,1.0,1.0,1.0,4.0,1.0,random_forest_emo_db
+happy,1.0,1.0,1.0,4.0,1.0,random_forest_emo_db
+neutral,1.0,1.0,1.0,4.0,1.0,random_forest_emo_db
+sad,1.0,1.0,1.0,4.0,1.0,random_forest_emo_db
+accuracy,1.0,1.0,1.0,1.0,1.0,random_forest_emo_db
+macro avg,1.0,1.0,1.0,16.0,,random_forest_emo_db
+weighted avg,1.0,1.0,1.0,16.0,,random_forest_emo_db
+angry,0.25,1.0,0.4,4.0,1.0,random_forest_iemocap_connected
+happy,1.0,0.0,0.0,4.0,0.0,random_forest_iemocap_connected
+neutral,1.0,0.0,0.0,4.0,0.0,random_forest_iemocap_connected
+sad,1.0,0.0,0.0,4.0,0.0,random_forest_iemocap_connected
+accuracy,0.25,0.25,0.25,0.25,0.25,random_forest_iemocap_connected
+macro avg,0.8125,0.25,0.1,16.0,,random_forest_iemocap_connected
+weighted avg,0.8125,0.25,0.1,16.0,,random_forest_iemocap_connected
+angry,0.25,1.0,0.4,4.0,1.0,random_forest_iemocap_impro
+happy,1.0,0.0,0.0,4.0,0.0,random_forest_iemocap_impro
+neutral,1.0,0.0,0.0,4.0,0.0,random_forest_iemocap_impro
+sad,1.0,0.0,0.0,4.0,0.0,random_forest_iemocap_impro
+accuracy,0.25,0.25,0.25,0.25,0.25,random_forest_iemocap_impro
+macro avg,0.8125,0.25,0.1,16.0,,random_forest_iemocap_impro
+weighted avg,0.8125,0.25,0.1,16.0,,random_forest_iemocap_impro
+angry,0.25,1.0,0.4,4.0,1.0,random_forest_iemocap_script
+happy,1.0,0.0,0.0,4.0,0.0,random_forest_iemocap_script
+neutral,1.0,0.0,0.0,4.0,0.0,random_forest_iemocap_script
+sad,1.0,0.0,0.0,4.0,0.0,random_forest_iemocap_script
+accuracy,0.25,0.25,0.25,0.25,0.25,random_forest_iemocap_script
+macro avg,0.8125,0.25,0.1,16.0,,random_forest_iemocap_script
+weighted avg,0.8125,0.25,0.1,16.0,,random_forest_iemocap_script
+angry,0.4444444444444444,1.0,0.6153846153846154,4.0,1.0,random_forest_nEMO
+happy,1.0,0.0,0.0,4.0,0.0,random_forest_nEMO
+neutral,1.0,0.0,0.0,4.0,0.0,random_forest_nEMO
+sad,0.5714285714285714,1.0,0.7272727272727273,4.0,1.0,random_forest_nEMO
+accuracy,0.5,0.5,0.5,0.5,0.5,random_forest_nEMO
+macro avg,0.753968253968254,0.5,0.3356643356643357,16.0,,random_forest_nEMO
+weighted avg,0.753968253968254,0.5,0.3356643356643357,16.0,,random_forest_nEMO
