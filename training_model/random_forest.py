@@ -10,7 +10,7 @@ from tqdm import tqdm
 import joblib
 
 # Define the default experiment name
-default_experiment_name = 'random_forest_RAVDESS'
+default_experiment_name = 'random_forest_emo_db'
 
 # Parse command-line argument for experiment name
 if len(sys.argv) > 1:
@@ -23,13 +23,12 @@ os.makedirs(experiment_name, exist_ok=True)
 
 tqdm.pandas()  # Prepare pandas to use tqdm for progress bars
 
-# Load data from CSV files
+# Ścieżki do plików danych
 train_data_paths = [
-    r'../four-emotions-csv-sets/train_four_emotions_RAVDESS_features.csv'
+    r'../four-emotions-csv-sets/train_emo_DB_features.csv'
 ]
 test_data_paths = [
-    r'../four-emotions-csv-sets/test_four_emotions_RAVDESS_features.csv',
-    r'../four-emotions-csv-sets/test_four_emotions_nEMO_features.csv'
+    r'../four-emotions-csv-sets/test_emo_DB_features.csv',
 ]
 
 # Function to load and combine datasets if more than one file exists

@@ -1,0 +1,2 @@
+Best parameters found: {'metric': 'cosine', 'n_neighbors': 1}
+Best cross-validation F1-score: 0.606708568487007
