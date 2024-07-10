@@ -1,85 +1,57 @@
-# WYNIKI KNN (grid search dla n_neighbours od 1 do 31 i 10 różnych odległości)
+## co było brane pod uwagę podczas dzielenia modeli
+- Przy wyborze najlepszych klasyfikatorów brano pod uwagę "classification rate", modele osiągające najwyższą średnią dokładność
+  
+## mini legenda
+- klasyfikator_nEMO - model trenowany na zbiorze danych nEMO
+- klasyfikator_RAVDESS - model trenowany na zbiorze danych RAVDESS
+- klasyfikator_connected - model trenowany na obu (połączonych) zbiorach danych nEMO i RAVDESS
+- klasyfikator_iemocap_connected - model treniwany na zbiorze danych IEMOCAP połączonych (gra aktorska i improwizacja)
+- klasyfikator_iemocap_impro - model treniwany na zbiorze danych IEMOCAP improwizacyjnych
+- klasyfikator_iemocap_script - model treniwany na zbiorze danych IEMOCAP skryptowych
+- klasyfikator_emo_db - model treniwany na zbiorze danych emoDB (język niemicki)
 
-## kNN trenowany na zbiorze danych nEMO 
-Best parameters found:  {'metric': 'manhattan', 'n_neighbors': 29}
+# NAJLEPSZE WYNIKI DLA KNN 
+- najlepsze wyniki dla zbioru danych RAVDESS uzyskał model kNN_connected
+- najlepsze wyniki dla zbioru danych nEMO uzyskał model kNN_nEMO
 
-Best cross-validation F1-score:  0.8845100519412388
-
-Test set accuracy (RAVDESS):  0.3333333333333333
-
-Test set F1-score (RAVDESS):  0.25027672085783464
-
-Test set 2 accuracy (nEMO):  0.5264705882352941
-
-Test set 2 F1-score (nEMO):  0.531107924838491
-
-
-## kNN trenowany na zbiorze danych RAVDESS
-Best parameters found:  {'metric': 'manhattan', 'n_neighbors': 1}
-
-Best cross-validation F1-score:  0.8395379741056669
-
-Test set accuracy (RAVDESS):  0.53125
-
-Test set F1-score (RAVDESS):  0.5175705365402405
-
-Test set 2 accuracy (nEMO):  0.2735294117647059
-
-Test set 2 F1-score (nEMO):  0.2061925054112554
+## najlepszy wynik (oba zbiory testowe) dla kNN_connected
+| Language       | Happiness | Sadness | Anger  | Neutral | Average |
+|----------------|------------|---------|--------|---------|---------|
+| Polish         | 45.88      | 77.65   | 36.47  | 41.18   | 50.30   |
+| English        | 43.75      | 39.58   | 93.75  | 68.75   | 61.46   |
+| Average        | 44.82      | 58.61   | 65.11  | 54.97   | 56.38   |
 
 
-## kNN trenowany i testowany na połączeniu zbiorów nEMO i RAVDESS
-Best parameters found:  {'metric': 'braycurtis', 'n_neighbors': 5}
+# NAJLEPSZE WYNIKI DLA KNN Z PREPROCESSINGIEM LDA
+- najlepsze wyniki dla zbioru danych RAVDESS uzyskał model knn_lda_RAVDESS
+- najlepsze wyniki dla zbioru danych nEMO uzyskał model knn_lda_nEMO
 
-Best cross-validation F1-score:  0.8049164716550099
-
-Test set accuracy:  0.4680451127819549
-
-Test set F1-score:  0.46502685390469595
-
-
-
-# WYNIKI KNN Z PREPROCESSINGIEM LDA
+## najlepszy wynik (oba zbiory testowe) dla knn_lda_connected
+| Language       | Happiness | Sadness | Anger  | Neutral | Average |
+|----------------|-----------|---------|--------|---------|---------|
+| Polish         | 31.76     | 64.71   | 44.71  | 30.59   | 42.94   |
+| English        | 41.67     | 52.08   | 75.00  | 60.42   | 57.29   |
+| Average        | 36.72     | 58.40   | 59.86  | 45.51   | 50.12   |
 
 na podstawie: [link](https://www.researchgate.net/publication/318009355_Cognitive_Gravity_Model_Based_Semi-Supervised_Dimension_Reduction)
 
 [wykres z tego artykułu](https://www.researchgate.net/figure/Accuracies-on-EmoDB-by-using-different-number-of-training-samples-where-KNN-is-utilized_fig5_318009355) 
 
-## trenowany na RAVDESS
-Best parameters found:  {'metric': 'chebyshev', 'n_neighbors': 30}
-Best cross-validation F1-score:  0.7757445102752729
 
-Test set accuracy (RAVDESS):  0.71875
 
-Test set F1-score (RAVDESS):  0.7149872390848601
+# NAJLEPSZE WYNIKI DLA RANDOM FOREST
+- najlepsze wyniki dla zbioru danych RAVDESS uzyskał model random_forest_connected
+- najlepsze wyniki dla zbioru danych nEMO uzyskał model random_forest_emo_db
 
-Test set 2 accuracy (nEMO):  0.3176470588235294
-
-Test set 2 F1-score (nEMO):  0.2612744429770656
-
-## trenowany na nEMO
-est parameters found:  {'metric': 'euclidean', 'n_neighbors': 28}
-
-Best cross-validation F1-score:  0.7814395143023777
-
-Test set accuracy (RAVDESS):  0.328125
-
-Test set F1-score (RAVDESS):  0.2135457279714827   
-
-Test set 2 accuracy (nEMO):  0.4764705882352941
-
-Test set 2 F1-score (nEMO):  0.46302451075369494
-
-## trenowany i testowany na połączeniu zbiorów nEMO i RAVDESS
-Best parameters found:  {'metric': 'manhattan', 'n_neighbors': 17}
-
-Best cross-validation F1-score:  0.6354016864628775
-
-Test set accuracy:  0.4567669172932331
-
-Test set F1-score:  0.45626658372264167
-
+## najlepszy wynik (oba zbiory testowe) dla random_forest_connected
+| Language       | Happiness | Sadness | Anger  | Neutral | Average |
+|----------------|-----------|---------|--------|---------|---------|
+| Polish         | 18.82     | 61.18   | 85.88  | 10.59   | 44.12   |
+| English        | 33.33     | 60.42   | 81.25  | 54.17   | 57.29   |
+| Average        | 26.08     | 60.80   | 83.57  | 32.38   | 50.70   |
 
 
 # WNIOSKI
 1. LDA w połączeniu z kNN daje lepsze wyniki (F1 = 71%) niż sam kNN (F1 = 51%) dla zbioru danych RAVDESS
+2. Dane trenowane na zbiorze danych IEMOCAP zdecydowaną większość (lub całość) emocji ze zbioru RAVDESS i nEMO klasyfikują jako angry
+3. zbiór RAVDESS często potrafi czerpać korzyści z trenowania na zbiorach RAVDESS i nEMO podczas gdy nEMO okazuje się dosyć opornym zbiorem danych do trenowania (ale ciężko znaleźć inny polski zbiór danych)
