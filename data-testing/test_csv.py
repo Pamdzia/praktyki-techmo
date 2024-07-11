@@ -1,7 +1,7 @@
 import pandas as pd
 
 # Ścieżka do pliku CSV
-csv_path = '/Users/maciejwylecial/Developer/praktyki-Techmo/noc_10_07/praktyki-techmo/experiments_results/Testing_on_RAVDESS.csv'
+csv_path = '../experiments_results/test_results_1207_nEMO.csv'
 
 # Wczytanie pliku CSV
 df = pd.read_csv(csv_path)
@@ -23,5 +23,5 @@ pivot_df = pivot_df.fillna(0)
 print(pivot_df)
 
 # Opcjonalnie zapisanie wyników do pliku CSV
-output_csv_path = 'ravdess_besr.csv'
+output_csv_path = 'nEMO_1207.csv'
 pivot_df.to_csv(output_csv_path, index=False)
