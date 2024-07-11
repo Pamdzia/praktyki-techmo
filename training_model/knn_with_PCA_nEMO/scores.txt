@@ -1,0 +1,3 @@
+Number of PCA components selected: 36
+Best parameters found: {'metric': 'euclidean', 'n_neighbors': 20}
+Best cross-validation F1-score: 0.8568509727929298

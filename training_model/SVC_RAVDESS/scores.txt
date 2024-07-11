@@ -1,0 +1,2 @@
+Best parameters found: {'C': 10, 'gamma': 0.01, 'kernel': 'rbf'}
+Best cross-validation F1-score: 0.8341390056529185
