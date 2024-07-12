@@ -17,6 +17,17 @@ $$
 \frac{\text{Total number of correctly recognized emotions}}{\text{Total number of emotions}} \times 100\%
 $$
 
+## użyte zbiory danych
+- nEMO - język polski
+- RAVDESS - język angielski
+
+### tabela przedstawiająca ilość plików dla konkretnej emocji w zależności od języka w zbiorach testowych
+| Language       | Happiness | Sadness | Anger  | Neutral | 
+|----------------|------------|---------|--------|---------|
+| Polish         | 85     | 85  | 85  | 85   |
+| English        | 48      | 48  | 48  |48   |
+
+
 # NAJLEPSZE WYNIKI DLA KNN 
 - najlepsze wyniki dla zbioru danych RAVDESS uzyskał model kNN_connected
 - najlepsze wyniki dla zbioru danych nEMO uzyskał model kNN_nEMO
