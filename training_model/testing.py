@@ -5,15 +5,15 @@ import sys
 import joblib
 from sklearn.metrics import accuracy_score, classification_report, confusion_matrix
 
-# Pobieranie nazwy eksperymentu z argumentów wiersza poleceń lub użycie domyślnej
+# pobieranie nazwy eksperymentu z argumentów wiersza poleceń lub użycie domyślnej
 if len(sys.argv) > 1:
     experiment_name = sys.argv[1]
 else:
-    experiment_name = 'mlp_RAVDESS'  # Domyślna nazwa eksperymentu
+    experiment_name = 'mlp_RAVDESS'  
 
-results_folder = '../experiments_results'  # Ścieżka do folderu wynikowego
+results_folder = '../experiments_results'  # scieżka do folderu wynikowego
 
-# Ładowanie skalera, kodera etykiet oraz modelu PCA (jeśli istnieje)
+# ladowanie skalera, kodera etykiet oraz modelu PCA (jeśli istnieje)
 scaler = joblib.load(os.path.join(experiment_name, 'scaler.pkl'))
 label_encoder = joblib.load(os.path.join(experiment_name, 'label_encoder.pkl'))
 use_lda = 'lda' in experiment_name.lower()
@@ -63,11 +63,11 @@ y_pred = model.predict(X_test)
 accuracy = accuracy_score(y_test, y_pred)
 print("Dokładność ogólna: ", accuracy)
 
-# Obliczanie dokładności dla każdej emocji
+# obliczanie dokładności dla każdej emocji
 cm = confusion_matrix(y_test, y_pred)
 class_accuracy = cm.diagonal() / cm.sum(axis=1)
 
-# Generowanie raportu klasyfikacji
+# generowanie raportu klasyfikacji
 report = classification_report(y_test, y_pred, target_names=label_encoder.classes_, zero_division=1, output_dict=True)
 for i, emotion in enumerate(label_encoder.classes_):
     report[emotion]['accuracy'] = class_accuracy[i]
@@ -75,7 +75,7 @@ for i, emotion in enumerate(label_encoder.classes_):
 print("Szczegółowy raport klasyfikacji:")
 print(classification_report(y_test, y_pred, target_names=label_encoder.classes_, zero_division=1))
 
-# Zapisywanie wyników do wspólnej CSV
+# zapisywanie wyników do wspólnej CSV
 csv_path = os.path.join(results_folder, 'test_results_1207_RAVDESS.csv')
 if not os.path.exists(results_folder):
     os.makedirs(results_folder)
