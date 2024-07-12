@@ -51,6 +51,42 @@ na podstawie: [link](https://www.researchgate.net/publication/318009355_Cognitiv
 | Average        | 26.08     | 60.80   | 83.57  | 32.38   | 50.70   |
 
 
+# NAJLEPSZE WYNIKI DLA KNN Z PCA
+- najlepsze wyniki dla zbioru danych RAVDESS uzyskał model knn_with_PCA_RAVDESS
+- najlepsze wyniki dla zbioru danych nEMO uzyskał model knn_with_PCA_nEMO
+
+## najlepszy wynik (oba zbiory testowe) dla knn_with_PCA_connected
+| Language       | Happiness | Sadness | Anger  | Neutral | Average |
+|----------------|-----------|---------|--------|---------|---------|
+| Polish         | 35.29     | 71.76   | 31.76  | 30.59   | 42.85   |
+| English        | 31.25     | 33.33   | 87.50  | 54.17   | 51.06   |
+| Average        | 33.27     | 52.55   | 59.63  | 42.38   | 46.96   |
+
+
+# NAJLEPSZE WYNIKI DLA SVC
+- najlepsze wyniki dla zbioru danych RAVDESS uzyskał model SVC_RAVDESS
+- najlepsze wyniki dla zbioru danych nEMO uzyskał model SVC_connected
+
+## najlepszy wynik (oba zbiory testowe) dla SVC_connected
+| Language       | Happiness | Sadness | Anger  | Neutral | Average |
+|----------------|-----------|---------|--------|---------|---------|
+| Polish         | 11.76     | 27.06   | 85.88  | 30.59   | 38.82   |
+| English        | 50.00     | 62.50   | 91.67  | 54.17   | 64.08   |
+| Average        | 30.88     | 44.78   | 88.78  | 42.38   | 51.45   |
+
+
+# NAJLEPSZE WYNIKI DLA MLP_CLASSIFIER
+- najlepsze wyniki dla zbioru danych RAVDESS uzyskał model mlp_RAVDESS
+- najlepsze wyniki dla zbioru danych nEMO uzyskał model mlp_combined
+
+## najlepszy wynik (oba zbiory testowe) dla SVC_connected
+| Language       | Happiness | Sadness | Anger  | Neutral | Average |
+|----------------|-----------|---------|--------|---------|---------|
+| Polish         | 32.94     | 45.88   | 72.94  | 35.29   | 46.76   |
+| English        | 56.25     | 58.33   | 89.58  | 60.42   | 66.65   |
+| Average        | 44.60     | 52.10   | 81.26  | 47.85   | 56.70   |
+
+
 # WNIOSKI
 1. LDA w połączeniu z kNN daje lepsze wyniki (F1 = 71%) niż sam kNN (F1 = 51%) dla zbioru danych RAVDESS
 2. Dane trenowane na zbiorze danych IEMOCAP zdecydowaną większość (lub całość) emocji ze zbioru RAVDESS i nEMO klasyfikują jako angry
