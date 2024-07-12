@@ -1,13 +1,19 @@
 #!/bin/bash
 
-# scieżka do skryptu Python
+# ścieżka do skryptu Python
 script_name="testing.py"
 
-# wyszukiwanie folderów i uruchamianie skryptu dla każdego eksperymentu
+# lista dataset-ów
+datasets=("RAVDESS" "nEMO")
+
+# wyszukiwanie folderów i uruchamianie skryptu dla każdego eksperymentu i datasetu
 for experiment in */ ; do
     if [ -d "$experiment" ]; then
-        echo "Uruchamianie eksperymentu dla folderu: $experiment"
-        python "$script_name" "${experiment%/}" # usuwa końcowy slash z nazwy folderu
+        for dataset in "${datasets[@]}"; do
+            experiment_name="${experiment%/}"
+            echo "Uruchamianie eksperymentu dla folderu: $experiment_name i datasetu: $dataset"
+            python "$script_name" "$dataset" "$experiment_name"
+        done
     fi
 done
 
