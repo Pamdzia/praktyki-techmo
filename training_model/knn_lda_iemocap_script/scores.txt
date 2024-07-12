@@ -1,0 +1,2 @@
+Best parameters found: {'metric': 'manhattan', 'n_neighbors': 29}
+Best cross-validation F1-score: 0.6030148880194102

@@ -1,0 +1,3 @@
+Number of PCA components selected: 34
+Best parameters found: {'metric': 'manhattan', 'n_neighbors': 9}
+Best cross-validation F1-score: 0.7594262051237086

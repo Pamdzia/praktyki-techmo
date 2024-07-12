@@ -1,0 +1,3 @@
+Number of PCA components selected: 33
+Best parameters found: {'metric': 'braycurtis', 'n_neighbors': 1}
+Best cross-validation F1-score: 0.787295202576953

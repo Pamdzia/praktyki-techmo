@@ -1,0 +1,2 @@
+Best parameters found: {'bootstrap': False, 'max_depth': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'n_estimators': 300}
+Best cross-validation F1-score: 0.7824555466139128

@@ -1,0 +1,2 @@
+Best parameters found: {'metric': 'euclidean', 'n_neighbors': 8}
+Best cross-validation F1-score: 0.5221177017529127

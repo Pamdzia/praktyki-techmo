@@ -1,0 +1,2 @@
+Best parameters found: {'metric': 'braycurtis', 'n_neighbors': 11}
+Best cross-validation F1-score: 0.7753416366952387
