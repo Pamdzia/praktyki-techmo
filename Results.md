@@ -27,7 +27,7 @@ $$
 | Polish         | 85     | 85  | 85  | 85   |
 | English        | 48      | 48  | 48  |48   |
 
-- cała informacja o danych znajduje się w pliku Readme.md
+- cała informacja o danych znajduje się w pliku README.md
 
 # NAJLEPSZE WYNIKI DLA KNN 
 - najlepsze wyniki dla zbioru danych RAVDESS uzyskał model kNN_connected
