@@ -10,6 +10,13 @@
 - klasyfikator_iemocap_script - model treniwany na zbiorze danych IEMOCAP skryptowych
 - klasyfikator_emo_db - model treniwany na zbiorze danych emoDB (język niemicki)
 
+## co oznaczaja wyniki (liczby) w tabelach
+- "classification rates" obliczano, dzieląc całkowitą liczbę emocji należących do danej klasy w testowaniu przez całkowitą liczbę poprawnie rozpoznanych emocji tej klasy, jak pokazano poniżej:
+
+$$
+\frac{\text{Total number of correctly recognized emotions}}{\text{Total number of emotions}} \times 100\%
+$$
+
 # NAJLEPSZE WYNIKI DLA KNN 
 - najlepsze wyniki dla zbioru danych RAVDESS uzyskał model kNN_connected
 - najlepsze wyniki dla zbioru danych nEMO uzyskał model kNN_nEMO
