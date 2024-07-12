@@ -3,17 +3,17 @@ import pandas as pd
 import os
 import sys
 import joblib
-from sklearn.metrics import accuracy_score, classification_report, confusion_matrix
+from sklearn.metrics import accuracy_score, classification_report, confusion_matrix, recall_score, precision_score, f1_score
 
-# pobieranie nazwy eksperymentu z argumentów wiersza poleceń lub użycie domyślnej
+# Pobieranie nazwy eksperymentu z argumentów wiersza poleceń lub użycie domyślnej
 if len(sys.argv) > 1:
     experiment_name = sys.argv[1]
 else:
-    experiment_name = 'mlp_RAVDESS'  
+    experiment_name = 'mlp_RAVDESS'  # Domyślna nazwa eksperymentu
 
-results_folder = '../experiments_results'  # scieżka do folderu wynikowego
+results_folder = '../experiments_results'  # Ścieżka do folderu wynikowego
 
-# ladowanie skalera, kodera etykiet oraz modelu PCA (jeśli istnieje)
+# Ładowanie skalera, kodera etykiet oraz modelu PCA (jeśli istnieje)
 scaler = joblib.load(os.path.join(experiment_name, 'scaler.pkl'))
 label_encoder = joblib.load(os.path.join(experiment_name, 'label_encoder.pkl'))
 use_lda = 'lda' in experiment_name.lower()
@@ -60,23 +60,62 @@ if use_lda:
 if use_pca:
     X_test = pca.transform(X_test)
 y_pred = model.predict(X_test)
-accuracy = accuracy_score(y_test, y_pred)
-print("Dokładność ogólna: ", accuracy)
 
-# obliczanie dokładności dla każdej emocji
+# Obliczanie ogólnej dokładności
+overall_accuracy = accuracy_score(y_test, y_pred)
+print("Dokładność ogólna: ", overall_accuracy)
+
+# Obliczanie macierzy pomyłek
 cm = confusion_matrix(y_test, y_pred)
-class_accuracy = cm.diagonal() / cm.sum(axis=1)
 
-# generowanie raportu klasyfikacji
+# Inicjalizacja list na metryki
+class_accuracies = []
+class_recalls = []
+class_precisions = []
+class_f1s = []
+supports = []
+
+# Obliczanie metryk dla każdej klasy
+for i, emotion in enumerate(label_encoder.classes_):
+    TP = cm[i, i]
+    FN = cm[i, :].sum() - TP
+    FP = cm[:, i].sum() - TP
+    TN = cm.sum() - (TP + FN + FP)
+    
+    class_accuracy = (TP + TN) / (TP + TN + FP + FN)
+    recall = TP / (TP + FN) if (TP + FN) > 0 else 0
+    precision = TP / (TP + FP) if (TP + FP) > 0 else 0
+    f1 = 2 * (precision * recall) / (precision + recall) if (precision + recall) > 0 else 0
+    
+    class_accuracies.append(class_accuracy)
+    class_recalls.append(recall)
+    class_precisions.append(precision)
+    class_f1s.append(f1)
+    supports.append(cm[i, :].sum())
+
+# Generowanie raportu klasyfikacji
 report = classification_report(y_test, y_pred, target_names=label_encoder.classes_, zero_division=1, output_dict=True)
 for i, emotion in enumerate(label_encoder.classes_):
-    report[emotion]['accuracy'] = class_accuracy[i]
+    report[emotion]['class_accuracy'] = class_accuracies[i]
+    report[emotion]['recall'] = class_recalls[i]
+    report[emotion]['precision'] = class_precisions[i]
+    report[emotion]['f1-score'] = class_f1s[i]
+    report[emotion]['support'] = supports[i]
 
 print("Szczegółowy raport klasyfikacji:")
 print(classification_report(y_test, y_pred, target_names=label_encoder.classes_, zero_division=1))
 
-# zapisywanie wyników do wspólnej CSV
-csv_path = os.path.join(results_folder, 'test_results_1207_RAVDESS.csv')
+# Dodanie ogólnej dokładności do raportu
+report['accuracy'] = {
+    'precision': overall_accuracy,
+    'recall': overall_accuracy,
+    'f1-score': overall_accuracy,
+    'support': len(y_test),
+    'class_accuracy': overall_accuracy
+}
+
+# Zapisywanie wyników do wspólnej CSV
+csv_path = os.path.join(results_folder, 'test_results_1307_RAVDESS.csv')
 if not os.path.exists(results_folder):
     os.makedirs(results_folder)
 report_df = pd.DataFrame(report).transpose()
