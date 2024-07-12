@@ -1,5 +1,5 @@
 ## co było brane pod uwagę podczas dzielenia modeli
-- Przy wyborze najlepszych klasyfikatorów brano pod uwagę "classification rate", modele osiągające najwyższą średnią dokładność
+- Przy wyborze najlepszych klasyfikatorów brano pod uwagę najwyższą wartość "classification rate"
   
 ## mini legenda
 - klasyfikator_nEMO - model trenowany na zbiorze danych nEMO
