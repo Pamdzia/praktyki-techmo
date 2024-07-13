@@ -5,12 +5,18 @@ import sys
 import joblib
 from sklearn.metrics import accuracy_score, classification_report, confusion_matrix, recall_score, precision_score, f1_score
 
-# Pobieranie nazwy eksperymentu z argumentów wiersza poleceń lub użycie domyślnej
-if len(sys.argv) > 1:
-    experiment_name = sys.argv[1]
+# Pobieranie nazwy zbioru danych i eksperymentu z argumentów wiersza poleceń lub użycie domyślnych
+if len(sys.argv) > 2:
+    dataset_name = sys.argv[1]
+    experiment_name = sys.argv[2]
+elif len(sys.argv) > 1:
+    dataset_name = sys.argv[1]
+    experiment_name = 'mlp_' + dataset_name  # Domyślna nazwa eksperymentu
 else:
-    experiment_name = 'mlp_RAVDESS'  # Domyślna nazwa eksperymentu
+    dataset_name = 'RAVDESS'  # Domyślna nazwa zbioru danych
+    experiment_name = 'mlp_' + dataset_name  # Domyślna nazwa eksperymentu
 
+experiment = '1307' #Expperyment do zapisu pliku csv z wynikami, przykladowo aktualna data
 results_folder = '../experiments_results'  # Ścieżka do folderu wynikowego
 
 # Ładowanie skalera, kodera etykiet oraz modelu PCA (jeśli istnieje)
@@ -54,7 +60,10 @@ def load_and_prepare_data(file_path):
     X = scaler.transform(X)
     return X, data['emotion']
 
-X_test, y_test = load_and_prepare_data('../four-emotions-csv-sets/test_four_emotions_RAVDESS_features.csv')
+# Załadowanie danych testowych
+test_file_path = f'../four-emotions-csv-sets/test_four_emotions_{dataset_name}_features.csv'
+X_test, y_test = load_and_prepare_data(test_file_path)
+
 if use_lda:
     X_test = lda.transform(X_test)
 if use_pca:
@@ -115,7 +124,7 @@ report['accuracy'] = {
 }
 
 # Zapisywanie wyników do wspólnej CSV
-csv_path = os.path.join(results_folder, 'test_results_1307_RAVDESS.csv')
+csv_path = os.path.join(results_folder, f'test_results_{experiment}_{dataset_name}.csv')
 if not os.path.exists(results_folder):
     os.makedirs(results_folder)
 report_df = pd.DataFrame(report).transpose()
