@@ -96,9 +96,9 @@ na podstawie: [link](https://www.researchgate.net/publication/318009355_Cognitiv
 
 # NAJLEPSZE WYNIKI DLA MLP_CLASSIFIER
 - najlepsze wyniki dla zbioru danych RAVDESS uzyskał model mlp_RAVDESS
-- najlepsze wyniki dla zbioru danych nEMO uzyskał model mlp_combined
+- najlepsze wyniki dla zbioru danych nEMO uzyskał model mlp_connected
 
-## najlepszy wynik (oba zbiory testowe) dla SVC_connected
+## najlepszy wynik (oba zbiory testowe) dla MLP_connected
 | Language       | Happiness | Sadness | Anger  | Neutral | Average |
 |----------------|-----------|---------|--------|---------|---------|
 | Polish         | 32.94     | 45.88   | 72.94  | 35.29   | 46.76   |
