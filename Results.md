@@ -136,6 +136,7 @@ na podstawie: [link](https://www.researchgate.net/publication/318009355_Cognitiv
 
 # NAJLEPSZE WYNIKI DLA MLP_FROM_GIT_UPDATED
 - najlepsze wyniki dla zbioru danych RAVDESS uzyskał model MLP_from_git_updated_RAVDESS
+  
 | Language       | Happiness | Sadness | Anger  | Neutral | Average |
 |----------------|-----------|---------|--------|---------|---------|
 | English        | 52.08     | 66.67   | 91.67  | 75.00   | 71.35   |
