@@ -4,6 +4,8 @@
 - klasyfikator_nEMO - model trenowany na zbiorze danych nEMO
 - klasyfikator_RAVDESS - model trenowany na zbiorze danych RAVDESS
 - klasyfikator_connected - model trenowany na obu (połączonych) zbiorach danych nEMO i RAVDESS
+- MLP_from_git_updated - model Sequential z warstwami Dense i Dropout
+- MLP_from_git_updated2 - model Sequential z warstwami Dense, Dropout i BatchNormalization
 
 ## najlepszy wynik (oba zbiory testowe) dla kNN_connected
 ### macierz pomyłek dla zbioru danych RAVDESS
@@ -40,9 +42,38 @@
 ### macierz pomyłek dla zbioru danych nEMO
 ![image](https://github.com/user-attachments/assets/ea74bfe4-065f-4b26-8b71-86bd00ff546c)
 
+## najlepszy wynik (oba zbiory testowe) dla SVC_with_LDA_connected
+### macierz pomyłek dla zbioru danych RAVDESS
+![image](https://github.com/user-attachments/assets/f14f49a9-658c-4e62-80bf-e3694e7359f2)
+
+### macierz pomyłek dla zbioru danych nEMO
+![image](https://github.com/user-attachments/assets/71a4369a-6e5d-4327-9cab-96fbb4ed9558)
+
+## najlepszy wynik (oba zbiory testowe) dla SVC_with_PCA_connected
+### macierz pomyłek dla zbioru danych RAVDESS
+![image](https://github.com/user-attachments/assets/42d49e4e-5bc8-46e7-9a58-724e8d0cab84)
+
+### macierz pomyłek dla zbioru danych nEMO
+![image](https://github.com/user-attachments/assets/f6098285-aa42-4c40-8a56-110583fc0c34)
+
 ## najlepszy wynik (oba zbiory testowe) dla MLP_connected
 ### macierz pomyłek dla zbioru danych RAVDESS
 ![image](https://github.com/user-attachments/assets/c193d854-8ee6-43f0-a988-8f808fd9f05e)
 
 ### macierz pomyłek dla zbioru danych nEMO
 ![image](https://github.com/user-attachments/assets/72f263fe-73f3-411a-ab78-ff9c873381fe)
+
+## najlepszy wynik (oba zbiory testowe) dla MLP_from_git_updated_connected
+### macierz pomyłek dla zbioru danych RAVDESS
+![image](https://github.com/user-attachments/assets/d10d1893-589a-4452-9eb5-ea91081eb507)
+
+### macierz pomyłek dla zbioru danych nEMO
+![image](https://github.com/user-attachments/assets/57a79f10-048e-4a33-b045-2196cca67dc9)
+
+## najlepszy wynik (oba zbiory testowe) dla MLP_from_git_updated2_connected
+### macierz pomyłek dla zbioru danych RAVDESS
+![image](https://github.com/user-attachments/assets/a5786e70-bd51-491d-b9a1-35233cf5a950)
+
+### macierz pomyłek dla zbioru danych nEMO
+![image](https://github.com/user-attachments/assets/b1cfba2a-c328-469a-a4fb-2931b9e2b343)
+
