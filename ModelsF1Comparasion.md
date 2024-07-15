@@ -10,7 +10,7 @@
 - klasyfikator_emo_db - model treniwany na zbiorze danych emoDB (język niemicki)
 - MLP_from_git_updated - model Sequential z warstwami Dense i Dropout
 - MLP_from_git_updated2 - model Sequential z warstwami Dense, Dropout i BatchNormalization
-- 
+  
 ## tabelka
 | F1-Score | Experiment Name                    | Dataset Name |
 |----------|------------------------------------|--------------|
