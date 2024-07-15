@@ -1,0 +1,2 @@
+Test set accuracy: 0.7135416865348816
+Test set loss: 1.009786605834961
