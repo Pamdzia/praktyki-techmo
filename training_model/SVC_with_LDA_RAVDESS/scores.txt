@@ -1,0 +1,2 @@
+Best parameters found: {'C': 10, 'class_weight': 'balanced', 'gamma': 1, 'kernel': 'linear', 'max_iter': 5000, 'tol': 1e-05}
+Best cross-validation F1-score: 0.7753616253242293
