@@ -10,6 +10,10 @@
 - klasyfikator_iemocap_script - model treniwany na zbiorze danych IEMOCAP skryptowych
 - klasyfikator_emo_db - model treniwany na zbiorze danych emoDB (język niemicki)
 
+
+- MLP_from_git_updated - model Sequential z warstwami Dense i Dropout
+- MLP_from_git_updated2 - model Sequential z warstwami Dense, Dropout i BatchNormalization
+
 ## co oznaczaja wyniki (liczby) w tabelach
 - "classification rates" obliczano, dzieląc całkowitą liczbę emocji należących do danej klasy w testowaniu przez całkowitą liczbę poprawnie rozpoznanych emocji tej klasy, jak pokazano poniżej:
 
@@ -94,6 +98,30 @@ na podstawie: [link](https://www.researchgate.net/publication/318009355_Cognitiv
 | Average        | 30.88     | 44.78   | 88.78  | 42.38   | 51.45   |
 
 
+# NAJLEPSZE WYNIKI DLA SVC Z PREPROCESSINGIEM LDA
+- najlepsze wyniki dla zbioru danych RAVDESS uzyskał model SVC_with_LDA_RAVDESS
+- najlepsze wyniki dla zbioru danych nEMO uzyskał model SVC_with_LDA_nEMO
+
+## najlepszy wynik (oba zbiory testowe) dla SVC_with_LDA_connected
+| Language       | Happiness | Sadness | Anger  | Neutral | Average |
+|----------------|-----------|---------|--------|---------|---------|
+| Polish         | 41.18     | 63.53   | 40.00  | 35.29   | 45.00   |
+| English        | 45.83     | 52.08   | 66.67  | 64.58   | 57.29   |
+| Average        | 43.50     | 57.80   | 53.34  | 49.94   | 51.15   |
+
+
+# NAJLEPSZE WYNIKI DLA SVC Z PREPROCESSINGIEM PCA
+- najlepsze wyniki dla zbioru danych RAVDESS uzyskał model SVC_with_PCA_connected
+- najlepsze wyniki dla zbioru danych nEMO uzyskał model SVC_with_PCA_connected
+
+## najlepszy wynik (oba zbiory testowe) dla SVC_with_PCA_connected
+| Language       | Happiness | Sadness | Anger  | Neutral | Average |
+|----------------|-----------|---------|--------|---------|---------|
+| Polish         | 24.71     | 65.88   | 81.18  | 22.35   | 48.53   |
+| English        | 45.83     | 54.17   | 87.50  | 62.50   | 62.00   |
+| Average        | 35.27     | 60.03   | 84.34  | 42.43   | 55.27   |
+
+
 # NAJLEPSZE WYNIKI DLA MLP_CLASSIFIER
 - najlepsze wyniki dla zbioru danych RAVDESS uzyskał model mlp_RAVDESS
 - najlepsze wyniki dla zbioru danych nEMO uzyskał model mlp_connected
@@ -106,8 +134,39 @@ na podstawie: [link](https://www.researchgate.net/publication/318009355_Cognitiv
 | Average        | 44.60     | 52.10   | 81.26  | 47.85   | 56.70   |
 
 
+# NAJLEPSZE WYNIKI DLA MLP_FROM_GIT_UPDATED
+- najlepsze wyniki dla zbioru danych RAVDESS uzyskał model MLP_from_git_updated_RAVDESS
+| Language       | Happiness | Sadness | Anger  | Neutral | Average |
+|----------------|-----------|---------|--------|---------|---------|
+| English        | 52.08     | 66.67   | 91.67  | 75.00   | 71.35   |
+
+- najlepsze wyniki dla zbioru danych nEMO uzyskał model MLP_from_git_updated_connected
+
+## najlepszy wynik (oba zbiory testowe) dla MLP_from_git_updated_connected
+| Language       | Happiness | Sadness | Anger  | Neutral | Average |
+|----------------|-----------|---------|--------|---------|---------|
+| Polish         | 43.53     | 71.76   | 35.29  | 40.00   | 47.65   |
+| English        | 18.75     | 43.75   | 85.42  | 81.25   | 57.79   |
+| Average        | 31.14     | 57.76   | 60.36  | 60.63   | 52.72   |
+
+
+# NAJLEPSZE WYNIKI DLA MLP_FROM_GIT_UPDATED2
+- najlepsze wyniki dla zbioru danych RAVDESS uzyskał model MLP_from_git_updated2_RAVDESS
+- najlepsze wyniki dla zbioru danych nEMO uzyskał model MLP_from_git_updated2_connected
+
+## najlepszy wynik (oba zbiory testowe) dla MLP_from_git_updated2_connected
+| Language       | Happiness | Sadness | Anger  | Neutral | Average |
+|----------------|-----------|---------|--------|---------|---------|
+| Polish         | 68.24     | 30.59   | 52.94  | 42.35   | 48.53   |
+| English        | 27.08     | 50.00   | 89.58  | 70.83   | 59.37   |
+| Average        | 47.66     | 40.30   | 71.26  | 56.59   | 53.95   |
+
+
 # WNIOSKI
 1. LDA w połączeniu z kNN daje lepsze wyniki (F1 = 71%) niż sam kNN (F1 = 51%) dla zbioru danych RAVDESS
 2. Dane trenowane na zbiorze danych IEMOCAP zdecydowaną większość (lub całość) emocji ze zbioru RAVDESS i nEMO klasyfikują jako angry
 3. zbiór RAVDESS często potrafi czerpać korzyści z trenowania na zbiorach RAVDESS i nEMO podczas gdy nEMO okazuje się dosyć opornym zbiorem danych do trenowania (ale ciężko znaleźć inny polski zbiór danych)
 4. wykonano eksperyment trenowania modelu kNN ze znaleziona w interecie implementacją CGMSDR, model został po kolei sprawdzany dla każdej ilości cech PCA (od 1 do 75), najlepsze wyniki uzyskano dla 63 cech PCA, F1-score zbioru treningowego (trening na nEMO i RAVDESS) wyniósł 0.78, ale test tego modelu na zbiorze danych RAVDESS wyniósł jedynie 0.23 dla accuracy i F1 dlatego (biorąc pod uwagę wyniki pozostałych modeli) zdecydowano nie kontynuować eksperymentów na tym modelu (model ten uzyskał równie słabe wyniki wtedy, gdy dodatkowo (oprócz standaryzacji przed CGMSDR) dokonano normalizacji przed kNN)
+5. po sporym powiększeniu siatki search grid w modelu SVC wyniki nie uległy zmianie (model SVC_linear_...)
+6. dla modelu SVC z preprocessingiem LDA najlepsze wyniki (osobno) zarówno dla modelu RAVDESS jak i nEMO uzyskano dla modelu trenowanego dla obu tych biorach danych
+7. dobre wyniki dla j angielskiego uzyskano na modelu MLP_from_git_updated trenowanym na zbiorze danych RAVDESS
