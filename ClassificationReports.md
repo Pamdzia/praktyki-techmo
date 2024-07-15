@@ -5,6 +5,9 @@
 - klasyfikator_RAVDESS - model trenowany na zbiorze danych RAVDESS
 - klasyfikator_connected - model trenowany na obu (połączonych) zbiorach danych nEMO i RAVDESS
 
+- MLP_from_git_updated - model Sequential z warstwami Dense i Dropout
+- MLP_from_git_updated2 - model Sequential z warstwami Dense, Dropout i BatchNormalization
+
 ## najlepszy wynik (oba zbiory testowe) dla kNN_connected
 ### classification report dla zbioru danych RAVDESS
 | Emotion  | Precision | Recall | F1-Score | Support | Class Accuracy |
