@@ -6,6 +6,8 @@ import joblib
 from sklearn.metrics import accuracy_score, classification_report, confusion_matrix
 import matplotlib.pyplot as plt
 import seaborn as sns
+import tensorflow as tf
+from keras.models import load_model
 
 # Pobieranie nazwy zbioru danych i eksperymentu z argumentów wiersza poleceń lub użycie domyślnych
 if len(sys.argv) > 2:
@@ -40,7 +42,8 @@ use_lda = 'lda' in experiment_name.lower()
 use_rf = 'forest' in experiment_name.lower()
 use_pca = 'pca' in experiment_name.lower()
 use_svc = 'svc' in experiment_name.lower()
-use_mlp = 'mlp' in experiment_name.lower()
+use_mlp_sklearn = 'mlp' in experiment_name.lower() and 'from_git' not in experiment_name.lower()
+use_mlp_keras = 'mlp_from_git' in experiment_name.lower()
 
 try:
     if use_rf:
@@ -51,13 +54,15 @@ try:
         model = joblib.load(os.path.join(experiment_name, model_file))
     elif use_svc:
         model = joblib.load(os.path.join(experiment_name, 'svc_model.pkl'))
-    elif use_mlp:
+    elif use_mlp_sklearn:
         model = joblib.load(os.path.join(experiment_name, 'mlp_model.pkl'))
+    elif use_mlp_keras:
+        model = load_model(os.path.join(experiment_name, 'mlp_model.keras'))
     else:
         model = joblib.load(os.path.join(experiment_name, 'knn_model.pkl'))
     
     if use_pca:
-        model_file = 'svc_model.pkl' if use_svc else 'knn_model.pkl'
+        model_file = 'pca.pkl'
         pca = joblib.load(os.path.join(experiment_name, model_file))
 except FileNotFoundError as e:
     print(f"Błąd: {e}")
@@ -91,7 +96,13 @@ if use_lda:
     X_test = lda.transform(X_test)
 if use_pca:
     X_test = pca.transform(X_test)
-y_pred = model.predict(X_test)
+
+# Predykcja
+if use_mlp_keras:
+    y_pred = model.predict(X_test)
+    y_pred = np.argmax(y_pred, axis=1)
+else:
+    y_pred = model.predict(X_test)
 
 # Obliczanie ogólnej dokładności
 overall_accuracy = accuracy_score(y_test, y_pred)
