@@ -181,7 +181,12 @@ weighted_f1_score = report['weighted avg']['f1-score']
 
 # Zapisywanie weighted f1-score do pliku CSV w folderze eksperymentu
 f1_score_path = os.path.join(experiment_folder, 'f1_scores.csv')
-f1_score_df = pd.DataFrame({'f1-score': [weighted_f1_score], 'experiment_name': [experiment_name]})
+# Dodanie nazwy zbioru danych jako kolumny w DataFrame
+f1_score_df = pd.DataFrame({
+    'f1-score': [weighted_f1_score],
+    'experiment_name': [experiment_name],
+    'dataset_name': [dataset_name]  # Dodanie nazwy datasetu
+})
 f1_score_df.to_csv(f1_score_path, mode='a', header=not os.path.isfile(f1_score_path), index=False)
 print("Wartość weighted f1-score zapisana do pliku:", f1_score_path)
 
