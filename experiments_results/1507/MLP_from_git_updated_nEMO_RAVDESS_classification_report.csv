@@ -1,0 +1,8 @@
+emotion,precision,recall,f1-score,support,class_accuracy
+angry,0.25,1.0,0.4,48.0,0.25
+happy,0.0,0.0,0.0,48.0,0.75
+neutral,0.0,0.0,0.0,48.0,0.75
+sad,0.0,0.0,0.0,48.0,0.75
+accuracy,0.25,0.25,0.25,192.0,0.25
+macro avg,0.8125,0.25,0.1,192.0,
+weighted avg,0.8125,0.25,0.10000000000000002,192.0,
