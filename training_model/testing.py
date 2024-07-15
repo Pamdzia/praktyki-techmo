@@ -18,7 +18,7 @@ else:
     dataset_name = 'RAVDESS'  # Domyślna nazwa zbioru danych
     experiment_name = 'mlp_' + dataset_name  # Domyślna nazwa eksperymentu
 
-experiment = '1307'  # Nazwa eksperymentu do zapisu plików, przykładowo aktualna data
+experiment = '1507'  # Nazwa eksperymentu do zapisu plików, przykładowo aktualna data
 results_folder = '../experiments_results'  # Ścieżka do folderu wynikowego
 experiment_folder = os.path.join(results_folder, experiment)  # Ścieżka do folderu konkretnego eksperymentu
 
@@ -47,7 +47,8 @@ try:
         model = joblib.load(os.path.join(experiment_name, 'random_forest_model.pkl'))
     elif use_lda:
         lda = joblib.load(os.path.join(experiment_name, 'lda.pkl'))
-        model = joblib.load(os.path.join(experiment_name, 'knn_model.pkl'))
+        model_file = 'svc_model.pkl' if use_svc else 'knn_model.pkl'
+        model = joblib.load(os.path.join(experiment_name, model_file))
     elif use_svc:
         model = joblib.load(os.path.join(experiment_name, 'svc_model.pkl'))
     elif use_mlp:
@@ -56,7 +57,8 @@ try:
         model = joblib.load(os.path.join(experiment_name, 'knn_model.pkl'))
     
     if use_pca:
-        pca = joblib.load(os.path.join(experiment_name, 'pca.pkl'))
+        model_file = 'svc_model.pkl' if use_svc else 'knn_model.pkl'
+        pca = joblib.load(os.path.join(experiment_name, model_file))
 except FileNotFoundError as e:
     print(f"Błąd: {e}")
     sys.exit(1)
