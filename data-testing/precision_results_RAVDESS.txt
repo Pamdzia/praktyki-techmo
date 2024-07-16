@@ -1,0 +1,225 @@
+Experiment: MLP_from_git_updated2_RAVDESS
+Best Recognized Emotion: angry (Precision: 0.84)
+Emotions with Precision > 0.5: angry, happy, neutral, sad
+Emotions with Precision < 0.2: None
+
+Experiment: MLP_from_git_updated2_connected
+Best Recognized Emotion: neutral (Precision: 0.61)
+Emotions with Precision > 0.5: angry, happy, neutral, sad
+Emotions with Precision < 0.2: None
+
+Experiment: MLP_from_git_updated2_nEMO
+Best Recognized Emotion: sad (Precision: 1.0)
+Emotions with Precision > 0.5: sad
+Emotions with Precision < 0.2: neutral (Precision: 0.0)
+
+Experiment: MLP_from_git_updated_RAVDESS
+Best Recognized Emotion: neutral (Precision: 0.78)
+Emotions with Precision > 0.5: angry, happy, neutral, sad
+Emotions with Precision < 0.2: None
+
+Experiment: MLP_from_git_updated_connected
+Best Recognized Emotion: sad (Precision: 0.81)
+Emotions with Precision > 0.5: angry, neutral, sad
+Emotions with Precision < 0.2: None
+
+Experiment: MLP_from_git_updated_nEMO
+Best Recognized Emotion: angry (Precision: 0.25)
+Emotions with Precision > 0.5: 
+Emotions with Precision < 0.2: happy (Precision: 0.0), neutral (Precision: 0.0), sad (Precision: 0.0)
+
+Experiment: SVC_RAVDESS
+Best Recognized Emotion: neutral (Precision: 0.73)
+Emotions with Precision > 0.5: angry, happy, neutral, sad
+Emotions with Precision < 0.2: None
+
+Experiment: SVC_connected
+Best Recognized Emotion: neutral (Precision: 0.76)
+Emotions with Precision > 0.5: angry, happy, neutral, sad
+Emotions with Precision < 0.2: None
+
+Experiment: SVC_linear_RAVDESS
+Best Recognized Emotion: neutral (Precision: 0.72)
+Emotions with Precision > 0.5: angry, happy, neutral, sad
+Emotions with Precision < 0.2: None
+
+Experiment: SVC_linear_connected
+Best Recognized Emotion: neutral (Precision: 0.76)
+Emotions with Precision > 0.5: angry, happy, neutral, sad
+Emotions with Precision < 0.2: None
+
+Experiment: SVC_linear_nEMO
+Best Recognized Emotion: sad (Precision: 0.8)
+Emotions with Precision > 0.5: sad
+Emotions with Precision < 0.2: happy (Precision: 0.0), neutral (Precision: 0.0)
+
+Experiment: SVC_nEMO
+Best Recognized Emotion: sad (Precision: 0.8)
+Emotions with Precision > 0.5: sad
+Emotions with Precision < 0.2: happy (Precision: 0.0), neutral (Precision: 0.0)
+
+Experiment: SVC_with_LDA_RAVDESS
+Best Recognized Emotion: neutral (Precision: 0.78)
+Emotions with Precision > 0.5: angry, happy, neutral, sad
+Emotions with Precision < 0.2: None
+
+Experiment: SVC_with_LDA_connected
+Best Recognized Emotion: angry (Precision: 0.73)
+Emotions with Precision > 0.5: angry, happy, neutral, sad
+Emotions with Precision < 0.2: None
+
+Experiment: SVC_with_LDA_nEMO
+Best Recognized Emotion: sad (Precision: 0.35)
+Emotions with Precision > 0.5: 
+Emotions with Precision < 0.2: happy (Precision: 0.0), neutral (Precision: 0.0)
+
+Experiment: SVC_with_PCA_RAVDESS
+Best Recognized Emotion: angry (Precision: 0.65)
+Emotions with Precision > 0.5: angry, happy, neutral
+Emotions with Precision < 0.2: None
+
+Experiment: SVC_with_PCA_connected
+Best Recognized Emotion: neutral (Precision: 0.71)
+Emotions with Precision > 0.5: angry, happy, neutral
+Emotions with Precision < 0.2: None
+
+Experiment: SVC_with_PCA_nEMO
+Best Recognized Emotion: sad (Precision: 0.5)
+Emotions with Precision > 0.5: 
+Emotions with Precision < 0.2: happy (Precision: 0.0), neutral (Precision: 0.0)
+
+Experiment: knn_RAVDESS
+Best Recognized Emotion: neutral (Precision: 0.65)
+Emotions with Precision > 0.5: angry, happy, neutral
+Emotions with Precision < 0.2: None
+
+Experiment: knn_connected
+Best Recognized Emotion: happy (Precision: 0.75)
+Emotions with Precision > 0.5: angry, happy, neutral
+Emotions with Precision < 0.2: None
+
+Experiment: knn_emo_db
+Best Recognized Emotion: angry (Precision: 0.31)
+Emotions with Precision > 0.5: 
+Emotions with Precision < 0.2: happy (Precision: 0.07), sad (Precision: 0.16)
+
+Experiment: knn_iemocap_connected
+Best Recognized Emotion: happy (Precision: 0.8)
+Emotions with Precision > 0.5: happy
+Emotions with Precision < 0.2: None
+
+Experiment: knn_iemocap_impro
+Best Recognized Emotion: sad (Precision: 0.43)
+Emotions with Precision > 0.5: 
+Emotions with Precision < 0.2: happy (Precision: 0.14)
+
+Experiment: knn_iemocap_script
+Best Recognized Emotion: neutral (Precision: 0.39)
+Emotions with Precision > 0.5: 
+Emotions with Precision < 0.2: happy (Precision: 0.0), sad (Precision: 0.0)
+
+Experiment: knn_lda_RAVDESS
+Best Recognized Emotion: neutral (Precision: 0.74)
+Emotions with Precision > 0.5: angry, happy, neutral, sad
+Emotions with Precision < 0.2: None
+
+Experiment: knn_lda_connected
+Best Recognized Emotion: angry (Precision: 0.72)
+Emotions with Precision > 0.5: angry, happy, neutral, sad
+Emotions with Precision < 0.2: None
+
+Experiment: knn_lda_emo_db
+Best Recognized Emotion: angry (Precision: 0.5)
+Emotions with Precision > 0.5: 
+Emotions with Precision < 0.2: happy (Precision: 0.19), neutral (Precision: 0.15)
+
+Experiment: knn_lda_iemocap_connected
+Best Recognized Emotion: neutral (Precision: 0.78)
+Emotions with Precision > 0.5: neutral, sad
+Emotions with Precision < 0.2: happy (Precision: 0.0)
+
+Experiment: knn_lda_iemocap_impro
+Best Recognized Emotion: neutral (Precision: 0.42)
+Emotions with Precision > 0.5: 
+Emotions with Precision < 0.2: happy (Precision: 0.0)
+
+Experiment: knn_lda_iemocap_script
+Best Recognized Emotion: sad (Precision: 0.5)
+Emotions with Precision > 0.5: 
+Emotions with Precision < 0.2: happy (Precision: 0.0), neutral (Precision: 0.0)
+
+Experiment: knn_lda_nEMO
+Best Recognized Emotion: sad (Precision: 0.39)
+Emotions with Precision > 0.5: 
+Emotions with Precision < 0.2: happy (Precision: 0.0), neutral (Precision: 0.0)
+
+Experiment: knn_nEMO
+Best Recognized Emotion: happy (Precision: 0.5)
+Emotions with Precision > 0.5: 
+Emotions with Precision < 0.2: neutral (Precision: 0.0)
+
+Experiment: knn_with_PCA_RAVDESS
+Best Recognized Emotion: happy (Precision: 0.62)
+Emotions with Precision > 0.5: angry, happy, neutral
+Emotions with Precision < 0.2: None
+
+Experiment: knn_with_PCA_connected
+Best Recognized Emotion: angry (Precision: 0.58)
+Emotions with Precision > 0.5: angry, happy, neutral
+Emotions with Precision < 0.2: None
+
+Experiment: knn_with_PCA_nEMO
+Best Recognized Emotion: happy (Precision: 0.5)
+Emotions with Precision > 0.5: 
+Emotions with Precision < 0.2: neutral (Precision: 0.0)
+
+Experiment: mlp_RAVDESS
+Best Recognized Emotion: neutral (Precision: 0.76)
+Emotions with Precision > 0.5: angry, happy, neutral, sad
+Emotions with Precision < 0.2: None
+
+Experiment: mlp_combined
+Best Recognized Emotion: angry (Precision: 0.77)
+Emotions with Precision > 0.5: angry, happy, neutral, sad
+Emotions with Precision < 0.2: None
+
+Experiment: mlp_nEMO
+Best Recognized Emotion: sad (Precision: 1.0)
+Emotions with Precision > 0.5: sad
+Emotions with Precision < 0.2: happy (Precision: 0.07), neutral (Precision: 0.0)
+
+Experiment: random_forest_RAVDESS
+Best Recognized Emotion: angry (Precision: 0.68)
+Emotions with Precision > 0.5: angry, happy, neutral
+Emotions with Precision < 0.2: None
+
+Experiment: random_forest_connected
+Best Recognized Emotion: angry (Precision: 0.68)
+Emotions with Precision > 0.5: angry, happy, neutral
+Emotions with Precision < 0.2: None
+
+Experiment: random_forest_emo_db
+Best Recognized Emotion: angry (Precision: 0.65)
+Emotions with Precision > 0.5: angry
+Emotions with Precision < 0.2: sad (Precision: 0.14)
+
+Experiment: random_forest_iemocap_connected
+Best Recognized Emotion: neutral (Precision: 0.55)
+Emotions with Precision > 0.5: neutral
+Emotions with Precision < 0.2: happy (Precision: 0.0)
+
+Experiment: random_forest_iemocap_impro
+Best Recognized Emotion: neutral (Precision: 0.52)
+Emotions with Precision > 0.5: neutral
+Emotions with Precision < 0.2: happy (Precision: 0.12)
+
+Experiment: random_forest_iemocap_script
+Best Recognized Emotion: happy (Precision: 1.0)
+Emotions with Precision > 0.5: happy, neutral
+Emotions with Precision < 0.2: None
+
+Experiment: random_forest_nEMO
+Best Recognized Emotion: angry (Precision: 0.67)
+Emotions with Precision > 0.5: angry
+Emotions with Precision < 0.2: neutral (Precision: 0.0)
+

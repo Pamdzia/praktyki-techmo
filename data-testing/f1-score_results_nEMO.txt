@@ -1,0 +1,225 @@
+Experiment: MLP_from_git_updated2_RAVDESS
+Best Recognized Emotion: happy (F1-score: 0.19)
+Emotions with F1-score > 0.5: 
+Emotions with F1-score < 0.2: angry (F1-score: 0.16), happy (F1-score: 0.19), neutral (F1-score: 0.01), sad (F1-score: 0.14)
+
+Experiment: MLP_from_git_updated2_connected
+Best Recognized Emotion: happy (F1-score: 0.55)
+Emotions with F1-score > 0.5: happy
+Emotions with F1-score < 0.2: None
+
+Experiment: MLP_from_git_updated2_nEMO
+Best Recognized Emotion: sad (F1-score: 0.64)
+Emotions with F1-score > 0.5: sad
+Emotions with F1-score < 0.2: happy (F1-score: 0.11)
+
+Experiment: MLP_from_git_updated_RAVDESS
+Best Recognized Emotion: sad (F1-score: 0.36)
+Emotions with F1-score > 0.5: 
+Emotions with F1-score < 0.2: angry (F1-score: 0.0), happy (F1-score: 0.13), neutral (F1-score: 0.03)
+
+Experiment: MLP_from_git_updated_connected
+Best Recognized Emotion: sad (F1-score: 0.7)
+Emotions with F1-score > 0.5: sad
+Emotions with F1-score < 0.2: None
+
+Experiment: MLP_from_git_updated_nEMO
+Best Recognized Emotion: sad (F1-score: 0.77)
+Emotions with F1-score > 0.5: angry, sad
+Emotions with F1-score < 0.2: neutral (F1-score: 0.16)
+
+Experiment: SVC_RAVDESS
+Best Recognized Emotion: happy (F1-score: 0.4)
+Emotions with F1-score > 0.5: 
+Emotions with F1-score < 0.2: angry (F1-score: 0.0), neutral (F1-score: 0.0), sad (F1-score: 0.0)
+
+Experiment: SVC_connected
+Best Recognized Emotion: angry (F1-score: 0.48)
+Emotions with F1-score > 0.5: 
+Emotions with F1-score < 0.2: happy (F1-score: 0.18)
+
+Experiment: SVC_linear_RAVDESS
+Best Recognized Emotion: happy (F1-score: 0.4)
+Emotions with F1-score > 0.5: 
+Emotions with F1-score < 0.2: angry (F1-score: 0.0), neutral (F1-score: 0.0), sad (F1-score: 0.0)
+
+Experiment: SVC_linear_connected
+Best Recognized Emotion: angry (F1-score: 0.48)
+Emotions with F1-score > 0.5: 
+Emotions with F1-score < 0.2: happy (F1-score: 0.18)
+
+Experiment: SVC_linear_nEMO
+Best Recognized Emotion: sad (F1-score: 0.55)
+Emotions with F1-score > 0.5: sad
+Emotions with F1-score < 0.2: happy (F1-score: 0.02)
+
+Experiment: SVC_nEMO
+Best Recognized Emotion: sad (F1-score: 0.55)
+Emotions with F1-score > 0.5: sad
+Emotions with F1-score < 0.2: happy (F1-score: 0.02)
+
+Experiment: SVC_with_LDA_RAVDESS
+Best Recognized Emotion: sad (F1-score: 0.52)
+Emotions with F1-score > 0.5: sad
+Emotions with F1-score < 0.2: angry (F1-score: 0.0), happy (F1-score: 0.1)
+
+Experiment: SVC_with_LDA_connected
+Best Recognized Emotion: sad (F1-score: 0.62)
+Emotions with F1-score > 0.5: sad
+Emotions with F1-score < 0.2: None
+
+Experiment: SVC_with_LDA_nEMO
+Best Recognized Emotion: sad (F1-score: 0.68)
+Emotions with F1-score > 0.5: angry, sad
+Emotions with F1-score < 0.2: None
+
+Experiment: SVC_with_PCA_RAVDESS
+Best Recognized Emotion: happy (F1-score: 0.4)
+Emotions with F1-score > 0.5: 
+Emotions with F1-score < 0.2: angry (F1-score: 0.0), neutral (F1-score: 0.0), sad (F1-score: 0.0)
+
+Experiment: SVC_with_PCA_connected
+Best Recognized Emotion: sad (F1-score: 0.78)
+Emotions with F1-score > 0.5: sad
+Emotions with F1-score < 0.2: None
+
+Experiment: SVC_with_PCA_nEMO
+Best Recognized Emotion: sad (F1-score: 0.68)
+Emotions with F1-score > 0.5: sad
+Emotions with F1-score < 0.2: happy (F1-score: 0.14)
+
+Experiment: knn_RAVDESS
+Best Recognized Emotion: happy (F1-score: 0.4)
+Emotions with F1-score > 0.5: 
+Emotions with F1-score < 0.2: angry (F1-score: 0.0), neutral (F1-score: 0.0), sad (F1-score: 0.0)
+
+Experiment: knn_connected
+Best Recognized Emotion: sad (F1-score: 0.83)
+Emotions with F1-score > 0.5: sad
+Emotions with F1-score < 0.2: None
+
+Experiment: knn_emo_db
+Best Recognized Emotion: neutral (F1-score: 0.53)
+Emotions with F1-score > 0.5: happy, neutral
+Emotions with F1-score < 0.2: angry (F1-score: 0.1)
+
+Experiment: knn_iemocap_connected
+Best Recognized Emotion: angry (F1-score: 0.45)
+Emotions with F1-score > 0.5: 
+Emotions with F1-score < 0.2: happy (F1-score: 0.0), sad (F1-score: 0.0)
+
+Experiment: knn_iemocap_impro
+Best Recognized Emotion: angry (F1-score: 0.4)
+Emotions with F1-score > 0.5: 
+Emotions with F1-score < 0.2: happy (F1-score: 0.0), neutral (F1-score: 0.06), sad (F1-score: 0.0)
+
+Experiment: knn_iemocap_script
+Best Recognized Emotion: neutral (F1-score: 0.64)
+Emotions with F1-score > 0.5: angry, neutral
+Emotions with F1-score < 0.2: happy (F1-score: 0.0), sad (F1-score: 0.0)
+
+Experiment: knn_lda_RAVDESS
+Best Recognized Emotion: sad (F1-score: 0.47)
+Emotions with F1-score > 0.5: 
+Emotions with F1-score < 0.2: angry (F1-score: 0.0), happy (F1-score: 0.15)
+
+Experiment: knn_lda_connected
+Best Recognized Emotion: sad (F1-score: 0.63)
+Emotions with F1-score > 0.5: sad
+Emotions with F1-score < 0.2: None
+
+Experiment: knn_lda_emo_db
+Best Recognized Emotion: neutral (F1-score: 0.52)
+Emotions with F1-score > 0.5: neutral
+Emotions with F1-score < 0.2: happy (F1-score: 0.02), sad (F1-score: 0.0)
+
+Experiment: knn_lda_iemocap_connected
+Best Recognized Emotion: angry (F1-score: 0.4)
+Emotions with F1-score > 0.5: 
+Emotions with F1-score < 0.2: happy (F1-score: 0.0), neutral (F1-score: 0.0), sad (F1-score: 0.0)
+
+Experiment: knn_lda_iemocap_impro
+Best Recognized Emotion: angry (F1-score: 0.4)
+Emotions with F1-score > 0.5: 
+Emotions with F1-score < 0.2: happy (F1-score: 0.0), neutral (F1-score: 0.0), sad (F1-score: 0.0)
+
+Experiment: knn_lda_iemocap_script
+Best Recognized Emotion: angry (F1-score: 0.4)
+Emotions with F1-score > 0.5: 
+Emotions with F1-score < 0.2: happy (F1-score: 0.0), neutral (F1-score: 0.0), sad (F1-score: 0.11)
+
+Experiment: knn_lda_nEMO
+Best Recognized Emotion: sad (F1-score: 0.72)
+Emotions with F1-score > 0.5: sad
+Emotions with F1-score < 0.2: None
+
+Experiment: knn_nEMO
+Best Recognized Emotion: sad (F1-score: 0.86)
+Emotions with F1-score > 0.5: happy, sad
+Emotions with F1-score < 0.2: None
+
+Experiment: knn_with_PCA_RAVDESS
+Best Recognized Emotion: happy (F1-score: 0.4)
+Emotions with F1-score > 0.5: 
+Emotions with F1-score < 0.2: angry (F1-score: 0.0), neutral (F1-score: 0.0), sad (F1-score: 0.0)
+
+Experiment: knn_with_PCA_connected
+Best Recognized Emotion: sad (F1-score: 0.8)
+Emotions with F1-score > 0.5: sad
+Emotions with F1-score < 0.2: None
+
+Experiment: knn_with_PCA_nEMO
+Best Recognized Emotion: sad (F1-score: 0.85)
+Emotions with F1-score > 0.5: sad
+Emotions with F1-score < 0.2: None
+
+Experiment: mlp_RAVDESS
+Best Recognized Emotion: happy (F1-score: 0.34)
+Emotions with F1-score > 0.5: 
+Emotions with F1-score < 0.2: angry (F1-score: 0.12), neutral (F1-score: 0.0)
+
+Experiment: mlp_combined
+Best Recognized Emotion: sad (F1-score: 0.6)
+Emotions with F1-score > 0.5: sad
+Emotions with F1-score < 0.2: None
+
+Experiment: mlp_nEMO
+Best Recognized Emotion: sad (F1-score: 0.63)
+Emotions with F1-score > 0.5: sad
+Emotions with F1-score < 0.2: happy (F1-score: 0.19)
+
+Experiment: random_forest_RAVDESS
+Best Recognized Emotion: happy (F1-score: 0.36)
+Emotions with F1-score > 0.5: 
+Emotions with F1-score < 0.2: neutral (F1-score: 0.0), sad (F1-score: 0.0)
+
+Experiment: random_forest_connected
+Best Recognized Emotion: sad (F1-score: 0.71)
+Emotions with F1-score > 0.5: sad
+Emotions with F1-score < 0.2: neutral (F1-score: 0.17)
+
+Experiment: random_forest_emo_db
+Best Recognized Emotion: happy (F1-score: 0.6)
+Emotions with F1-score > 0.5: happy, neutral
+Emotions with F1-score < 0.2: angry (F1-score: 0.11), sad (F1-score: 0.0)
+
+Experiment: random_forest_iemocap_connected
+Best Recognized Emotion: angry (F1-score: 0.4)
+Emotions with F1-score > 0.5: 
+Emotions with F1-score < 0.2: happy (F1-score: 0.0), neutral (F1-score: 0.0), sad (F1-score: 0.0)
+
+Experiment: random_forest_iemocap_impro
+Best Recognized Emotion: angry (F1-score: 0.4)
+Emotions with F1-score > 0.5: 
+Emotions with F1-score < 0.2: happy (F1-score: 0.0), neutral (F1-score: 0.0), sad (F1-score: 0.0)
+
+Experiment: random_forest_iemocap_script
+Best Recognized Emotion: angry (F1-score: 0.4)
+Emotions with F1-score > 0.5: 
+Emotions with F1-score < 0.2: happy (F1-score: 0.0), neutral (F1-score: 0.0), sad (F1-score: 0.0)
+
+Experiment: random_forest_nEMO
+Best Recognized Emotion: sad (F1-score: 0.71)
+Emotions with F1-score > 0.5: sad
+Emotions with F1-score < 0.2: happy (F1-score: 0.11)
+
