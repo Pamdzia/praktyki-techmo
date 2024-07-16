@@ -1,7 +1,7 @@
 import pandas as pd
 
 # Wczytanie pliku CSV
-file_path = '/Users/maciejwylecial/Developer/praktyki-Techmo/13_07/praktyki-techmo/experiments_results/test_results_1507_nEMO.csv'
+file_path = '../experiments_results/test_results_1507_nEMO.csv'
 df = pd.read_csv(file_path)
 
 # Filtrowanie tylko wierszy z emocjami
