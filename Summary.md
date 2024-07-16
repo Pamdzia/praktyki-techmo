@@ -12,7 +12,7 @@
 - emocją, która jest najlepiej rozpoznawana w prawie wszystkich eksperymentach, jest "sad" (smutny). Precyzja w rozpoznawaniu tej emocji jest bardzo wysoka, często osiągając wartości bliskie 1.0 (100%)
 - w zdecydowanej większości eksperymentów jedyną emocją, która osiągnęła precyzję powyżej 0.5, jest "sad"
 - większość emocji rozpoznawana jest na poziomie powyżej 0.2 ale poniżej 0.5 (z dwoma wyjątkami „happy”)
-##Testowanie na nEMO modeli trenowanych na RAVDESS i nEMO
+## Testowanie na nEMO modeli trenowanych na RAVDESS i nEMO
 - emocja "sad" (smutny) jest najlepiej rozpoznawana w większości eksperymentów. Precyzja rozpoznawania tej emocji jest bardzo wysoka, często osiągając wartości bliskie 1.0 (100%)
 - modele radzą sobie również dobrze z rozpoznawaniem emocji "neutral"
 
