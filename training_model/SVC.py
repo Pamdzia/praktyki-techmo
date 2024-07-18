@@ -10,7 +10,7 @@ from tqdm import tqdm
 import joblib
 
 # zdefiniowanie nazwy folderu
-default_experiment_name = 'SVC_nEMO'
+default_experiment_name = 'SVC_emo_DB'
 
 # z lini komend nazwa
 if len(sys.argv) > 1:
@@ -25,10 +25,10 @@ tqdm.pandas()
 
 # sciezki do pliku/ow
 train_data_paths = [
-    r'../four-emotions-csv-sets/train_four_emotions_nEMO_features.csv'
+    r'../four-emotions-csv-sets/train_four_emotions_emo_DB_features.csv'
 ]
 test_data_paths = [
-    r'../four-emotions-csv-sets/test_four_emotions_nEMO_features.csv'
+    r'../four-emotions-csv-sets/test_four_emotions_emo_DB_features.csv'
 ]
 
 # funkcje do zaladowania i laczenia datasetow train i test

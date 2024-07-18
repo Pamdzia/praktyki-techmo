@@ -11,7 +11,7 @@ from tensorflow.compat.v1 import ConfigProto, InteractiveSession
 from keras.utils import to_categorical
 
 # Zdefiniowanie nazwy folderu
-default_experiment_name = 'MLP_from_git_updated2_connected'
+default_experiment_name = 'MLP_from_git_updated2_emo_DB'
 
 # Z linii komend nazwa
 if len(sys.argv) > 1:
@@ -26,16 +26,13 @@ tqdm.pandas()
 
 # Ścieżki do plików
 train_data_paths = [
-    r'../four-emotions-csv-sets/train_four_emotions_nEMO_features.csv',
-    r'../four-emotions-csv-sets/train_four_emotions_RAVDESS_features.csv'
+    r'../four-emotions-csv-sets/train_four_emotions_emo_DB_features.csv'
 ]
 dev_data_paths = [
-    r'../four-emotions-csv-sets/dev_four_emotions_nEMO_features.csv',
-    r'../four-emotions-csv-sets/dev_four_emotions_RAVDESS_features.csv'
+    r'../four-emotions-csv-sets/dev_four_emotions_emo_DB_features.csv'
 ]
 test_data_paths = [
-    r'../four-emotions-csv-sets/test_four_emotions_nEMO_features.csv',
-    r'../four-emotions-csv-sets/test_four_emotions_RAVDESS_features.csv'
+    r'../four-emotions-csv-sets/test_four_emotions_emo_DB_features.csv'
 ]
 
 # Funkcje do załadowania i łączenia datasetów train, dev i test
