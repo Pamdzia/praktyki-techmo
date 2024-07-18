@@ -1,0 +1,2 @@
+Best parameters found: {'activation': 'relu', 'alpha': 0.001, 'hidden_layer_sizes': (100, 100), 'learning_rate_init': 0.01, 'momentum': 0.9, 'nesterovs_momentum': True, 'solver': 'lbfgs'}
+Best cross-validation F1-score: 0.8946210054994884
