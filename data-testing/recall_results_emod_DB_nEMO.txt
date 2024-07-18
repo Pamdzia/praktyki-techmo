@@ -1,0 +1,50 @@
+Experiment: MLP_from_git_updated2_emo_DB
+Best Recognized Emotion: neutral (Recall: 0.96)
+Emotions with Recall > 0.5: neutral
+Emotions with Recall < 0.2: angry (Recall: 0.08), happy (Recall: 0.09), sad (Recall: 0.01)
+
+Experiment: MLP_from_git_updated_emo_DB
+Best Recognized Emotion: neutral (Recall: 0.99)
+Emotions with Recall > 0.5: neutral
+Emotions with Recall < 0.2: angry (Recall: 0.14), happy (Recall: 0.08), sad (Recall: 0.04)
+
+Experiment: SVC_emo_DB
+Best Recognized Emotion: neutral (Recall: 0.73)
+Emotions with Recall > 0.5: neutral
+Emotions with Recall < 0.2: happy (Recall: 0.18), sad (Recall: 0.01)
+
+Experiment: SVC_with_LDA_emo_DB
+Best Recognized Emotion: neutral (Recall: 0.84)
+Emotions with Recall > 0.5: angry, neutral
+Emotions with Recall < 0.2: happy (Recall: 0.04), sad (Recall: 0.0)
+
+Experiment: SVC_with_PCA_emo_DB
+Best Recognized Emotion: neutral (Recall: 0.98)
+Emotions with Recall > 0.5: neutral
+Emotions with Recall < 0.2: angry (Recall: 0.08), sad (Recall: 0.04)
+
+Experiment: knn_emo_db
+Best Recognized Emotion: happy (Recall: 0.79)
+Emotions with Recall > 0.5: happy, neutral
+Emotions with Recall < 0.2: angry (Recall: 0.06), sad (Recall: 0.15)
+
+Experiment: knn_lda_emoDB
+Best Recognized Emotion: neutral (Recall: 0.82)
+Emotions with Recall > 0.5: angry, neutral
+Emotions with Recall < 0.2: happy (Recall: 0.01), sad (Recall: 0.0)
+
+Experiment: knn_with_PCA_emo_DB
+Best Recognized Emotion: neutral (Recall: 0.61)
+Emotions with Recall > 0.5: neutral
+Emotions with Recall < 0.2: happy (Recall: 0.09), sad (Recall: 0.08)
+
+Experiment: mlp_emo_DB
+Best Recognized Emotion: neutral (Recall: 1.0)
+Emotions with Recall > 0.5: neutral
+Emotions with Recall < 0.2: happy (Recall: 0.04), sad (Recall: 0.05)
+
+Experiment: random_forest_emo_db
+Best Recognized Emotion: neutral (Recall: 0.88)
+Emotions with Recall > 0.5: happy, neutral
+Emotions with Recall < 0.2: angry (Recall: 0.06), sad (Recall: 0.0)
+
