@@ -19,11 +19,13 @@ pycparser==2.22
 python-dateutil==2.9.0.post0
 pytz==2024.1
 requests==2.32.3
+seaborn==0.13.2
 scikit-learn==1.5.0
 scipy==1.14.0
 six==1.16.0
 soundfile==0.12.1
 soxr==0.3.7
+tensorflow==2.17.0
 threadpoolctl==3.5.0
 typing_extensions==4.12.2
 tzdata==2024.1
