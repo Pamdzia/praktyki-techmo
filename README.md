@@ -27,8 +27,22 @@ Napisano skrypt *install.sh* [pełny skrypt](https://github.com/Pamdzia/praktyki
 
 # 2. Przygotowanie danych
 
-Przygotowano skrypty, które przygotowują.....
-
+Podstawowe ustawienie zbiorów danych pod dalszą pracę jest wykonywane z wykorzytaniem skryptów [dataset_setup.sh](https://github.com/Pamdzia/praktyki-techmo/blob/main/data-utils/datasets_setup.sh) oraz [dataset_setup_win.ps1](https://github.com/Pamdzia/praktyki-techmo/blob/main/data-utils/dataset_setup_win.ps1) w zależności od wykorzystywanego systemu Ubuntu/MacOS lub Windows 
+Uruchamiany pipeline wygląda następująco:
+## Skrypt data_downloader
+- Pobranie podstawowych zbiorów danych (RAVDESS oraz nEMO)
+- Rozpakowanie pobranych nagrań do odpowiednich folderów
+# Skrypt RAVDESS_csv_setter
+- Przygotowanie pliku csv dla zbioru RAVDESS, nEMO jest pobierany wraz z plkiem z informacjami natomiast csv dla RAVDESS jest prazygotowywane zgodnie z informacjami ze strony datasetu na [Kaggle](https://www.kaggle.com/datasets/uwrfkaggler/ravdess-emotional-speech-audio)
+## Skrypt four_emotions_datasets_setup
+- Przygotowanie plików csv definiujących zbiory danych mapując zgodnie poszczególne cechy wraz z przygotowaniem czterech podstawowych emocji angry, sad, happy oraz neutral
+## Skrypt four_emotions_features_setup
+- Wczytywanie plików csv definiujących zbiory danych tak aby zmapować emocję z odpowiednim nagraniem
+- Wyciągnięcie cech z nagrań (z ich wartościami mean, var, max, min, range) obejmujących: po 12 cech MFCC, pitch, energy, zcr
+## Skrypt four_emotions_data_division
+- Wczytanie pełnych plików csv z wyekstrachowanymi cechami
+- Podzielenie korpusu na zbiory train, test, dev wykonując balansowanie ilości nagrań z naciskem na wyrównany podział emocji w zbiorze testowym [dokładne liczby znajdują się w pliku Data.md](https://github.com/Pamdzia/praktyki-techmo/blob/main/Data.md)
+## W razie potrzeby użytkownik może również ręcznie uruchomić pojedyncze skrypty, bądź przekształcić je pod inne zbiory danych, instrukcja dla poszczególnych skryptów znajduje się [tutaj]()
 Skrypt bash przygotowujący datasety RAVDESS oraz nEMO wraz z ich pobraniem i uzyskaniem cech z wykorzystaniem MFCC znajduje się w *data-utils*, posiada on 5 zmiennych do ustalenia ściezek gdzie zostaną pobrane zipy z danymi, gdzie zapiszemy rozpakowane datasety oraz gdzie będą się znajdować csvki wynikowe, zarówno te pełne jak i pdozielone na sety train, dev, test.
 
 Aby ręcznie przygotować zbiory należy:
