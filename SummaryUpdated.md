@@ -13,6 +13,12 @@
 - MLP_from_git_updated - model Sequential z warstwami Dense i Dropout
 - MLP_from_git_updated2 - model Sequential z warstwami Dense, Dropout i BatchNormalization
 
+## pełne wyniki
+[wyniki precyzji dla modeli testowanych na zbiorze danych nEMO i trenowanych na RAVDESS/nEMO/RAVDESS+nEMO](https://github.com/Pamdzia/praktyki-techmo/blob/main/data-testing/precision_results_nEMO.txt)
+[wyniki precyzji dla modeli testowanych na zbiorze danych nEMO i trenowanych na emoDB](https://github.com/Pamdzia/praktyki-techmo/blob/main/data-testing/precision_results_emo_DB_nEMO.txt)
+[wyniki precyzji dla modeli testowanych na zbiorze danych RAVDESS i trenowanych na RAVDESS/nEMO/RAVDESS+nEMO](https://github.com/Pamdzia/praktyki-techmo/blob/main/data-testing/precision_results_RAVDESS.txt)
+[wyniki precyzji dla modeli testowanych na zbiorze danych RAVDESS i trenowanych na emoDB](https://github.com/Pamdzia/praktyki-techmo/blob/main/data-testing/precision_results_emo_DB_RAVDESS.txt)
+
 ## Testowanie na nEMO modeli trenowanych na RAVDESS
 - Większość modeli miała trudności z rozpoznawaniem emocji z precyzją powyżej 0.5. Żadna emocja nie osiągnęła precyzji powyżej 0.5 w żadnym z eksperymentów. Najlepiej rozpoznawane emocje to zazwyczaj "happy" (szczęśliwy) lub "sad" (smutny).
 
