@@ -5,7 +5,7 @@ with open('requirements.txt') as f:
 
 setup(
     name='praktyki-techmo',
-    version='0.9',
+    version='0.9', #version 1.0 will be the one at the end of the internship
     packages=find_packages(),
     install_requires=required,
 )
