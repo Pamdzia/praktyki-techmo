@@ -32,7 +32,7 @@ Uruchamiany pipeline wygląda następująco:
 ## Skrypt data_downloader
 - Pobranie podstawowych zbiorów danych (RAVDESS oraz nEMO)
 - Rozpakowanie pobranych nagrań do odpowiednich folderów
-# Skrypt RAVDESS_csv_setter
+## Skrypt RAVDESS_csv_setter
 - Przygotowanie pliku csv dla zbioru RAVDESS, nEMO jest pobierany wraz z plkiem z informacjami natomiast csv dla RAVDESS jest prazygotowywane zgodnie z informacjami ze strony datasetu na [Kaggle](https://www.kaggle.com/datasets/uwrfkaggler/ravdess-emotional-speech-audio)
 ## Skrypt four_emotions_datasets_setup
 - Przygotowanie plików csv definiujących zbiory danych mapując zgodnie poszczególne cechy wraz z przygotowaniem czterech podstawowych emocji angry, sad, happy oraz neutral
@@ -43,17 +43,6 @@ Uruchamiany pipeline wygląda następująco:
 - Wczytanie pełnych plików csv z wyekstrachowanymi cechami
 - Podzielenie korpusu na zbiory train, test, dev wykonując balansowanie ilości nagrań z naciskem na wyrównany podział emocji w zbiorze testowym [dokładne liczby znajdują się w pliku Data.md](https://github.com/Pamdzia/praktyki-techmo/blob/main/Data.md)
 ## W razie potrzeby użytkownik może również ręcznie uruchomić pojedyncze skrypty, bądź przekształcić je pod inne zbiory danych, instrukcja dla poszczególnych skryptów znajduje się [tutaj](https://github.com/Pamdzia/praktyki-techmo/blob/main/Manual.md)
-Skrypt bash przygotowujący datasety RAVDESS oraz nEMO wraz z ich pobraniem i uzyskaniem cech z wykorzystaniem MFCC znajduje się w *data-utils*, posiada on 5 zmiennych do ustalenia ściezek gdzie zostaną pobrane zipy z danymi, gdzie zapiszemy rozpakowane datasety oraz gdzie będą się znajdować csvki wynikowe, zarówno te pełne jak i pdozielone na sety train, dev, test.
-
-Aby ręcznie przygotować zbiory należy:
-- Wejść do folderu *data-utils*
-- Uruchomić skrypt *data_downloader.py* podając ścieżkę do której chemy pobrać zbiory danych
-- Uruchomić skrypt *Ravdess_csv_setter.py*, spowodowane jest to tym iż informacje o plikach znajdują się jedynie na stronie z datasetem, gdy nEMO pobierane jest wraz z plikiem .tsv
-- Uruchomić skrypt *four_emotions_dataset_setup*, skrypt ten przygotowuje ujednolicenie nazw oraz wycięcie zbędnych cech
-- Uruchomić skrypt *four_emotions_features_setup*, skrypt ten uruchamia analizę danych wyciągając features opisane w artykule
-- Uruchomić skrypt *four_emotions_data_division*, skrypt ten odpowiada za podział korpusów na zbiory train, dev, test wykonując wyrównanie danych, aby w zbiorze testowym znajdowało się tyle samo próbek dla każdej emocji
-
-- Dane zostały zbalansowane przez usunięcie nadmiarowych próbek balansując do najrzadziej występującej emocji i podzielone na zbiory train, dev i test w ilości (573/87/85) w przybliżeniu dla każdej emocji dla języka polskiegi i (296/32/48) dla języka angielskiego. [dokładne liczby znajdują się w pliku Data.md](https://github.com/Pamdzia/praktyki-techmo/blob/main/Data.md)
 
 # 3. Przygotowanie danych, do treningu i trening modeli 
 
