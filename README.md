@@ -19,8 +19,15 @@ Do pracy nad emocjami wykorzystywane są dane z niniejszych zbiorów
 - [JL-Corpus](https://www.kaggle.com/datasets/tli725/jl-corpus) - Język angielski
 - [MSP_Podcast](https://ecs.utdallas.edu/research/researchlabs/msp-lab/MSP-Podcast.html) - Język angielski
 - [nEMO](https://huggingface.co/datasets/amu-cai/nEMO) - Język polski
+- [emoDB](https://www.kaggle.com/datasets/piyushagni5/berlin-database-of-emotional-speech-emodb) - Język niemiecki
 
-# Przygotowanie danych
+# 1. Przygotowanie środowiska do pracy
+
+Napisano skrypt *install.sh* [pełny skrypt](https://github.com/Pamdzia/praktyki-techmo/blob/main/install.sh), który przygotowuje wirtualne środowisko pythona 3.10 oraz korzysta z *setup.py* [pełny skrypt](https://github.com/Pamdzia/praktyki-techmo/blob/main/setup.py), który konfiguruje pakiet Python o nazwie 'praktyki-techmo' w wersji 0.9, wyszukuje i dołącza wszystkie jego podpakiety oraz instaluje wymagane zależności wymienione w pliku 'requirements.txt'
+
+# 2. Przygotowanie danych
+
+Przygotowano skrypty, które przygotowują.....
 
 Skrypt bash przygotowujący datasety RAVDESS oraz nEMO wraz z ich pobraniem i uzyskaniem cech z wykorzystaniem MFCC znajduje się w *data-utils*, posiada on 5 zmiennych do ustalenia ściezek gdzie zostaną pobrane zipy z danymi, gdzie zapiszemy rozpakowane datasety oraz gdzie będą się znajdować csvki wynikowe, zarówno te pełne jak i pdozielone na sety train, dev, test.
 
@@ -32,80 +39,27 @@ Aby ręcznie przygotować zbiory należy:
 - Uruchomić skrypt *four_emotions_features_setup*, skrypt ten uruchamia analizę danych wyciągając features opisane w artykule
 - Uruchomić skrypt *four_emotions_data_division*, skrypt ten odpowiada za podział korpusów na zbiory train, dev, test wykonując wyrównanie danych, aby w zbiorze testowym znajdowało się tyle samo próbek dla każdej emocji
 
-# Tabele z danymi dla nEMO oraz RAVDESS podzielonymi na zbiory train, dev oraz test
+- Dane zostały zbalansowane przez usunięcie nadmiarowych próbek balansując do najrzadziej występującej emocji i podzielone na zbiory train, dev i test w ilości (573/87/85) w przybliżeniu dla każdej emocji dla języka polskiegi i (296/32/48) dla języka angielskiego. [dokładne liczby znajdują się w pliku Data.md](https://github.com/Pamdzia/praktyki-techmo/blob/main/Data.md)
 
-## Podział zbioru danych RAVDESS (calm jako neutral)
+# 3. Przygotowanie danych, do treningu i trening modeli 
 
-## Original dataset distribution:
-| Emotion | Count |
-|---------|-------|
-| Neutral | 376   |
-| Happy   | 376   |
-| Sad     | 376   |
-| Angry   | 376   |
+Dane zostały w każdym pliku osobno przygotowane do treningu (konwersja określonych kolumn danych na tablice numpy, usunięcie białych przestrzeni, label encoder, przygotowanie train, (dev w przypadku MLP) i test data, użycie StandartScaler). Następujące modele: MLP_from_git_updated - model Sequential z warstwami Dense i Dropout, MLP_from_git_updated2 - model Sequential z warstwami Dense, Dropout i BatchNormalization, SVC, SVC z LDA, SVC z PCA, kNN, kNN z LDA, kNN z PCA, MLPClassifier, random forest) zostały napisane i wytrenowane osobno dla każdego ze zbiorów danych: nEMO, RAVDESS, nEMO + RAVDESS, emoDB. Dla każdego modelu wybrano odpowiednie hiperparametry korzystając z siatki grid search. Dodatkowo wybrane modele zostały wytrenowane na zbiorze danych IEMOCAP ale z powodu niezadowalających wyników testowych nie kontynuowano pracy z tym zbiorem danych. Każdy wytrenowany model zapisano.
 
-## Train dataset distribution:
-| Emotion | Count |
-|---------|-------|
-| Neutral | 296   |
-| Happy   | 296   |
-| Sad     | 296   |
-| Angry   | 296   |
+- kody modeli znajdują się w folderze [training_model](https://github.com/Pamdzia/praktyki-techmo/tree/main/training_model) wszystkie zapisane modele znajdują się w odpowiednio nazwanych podfolderach folderu training_model
 
-## Dev dataset distribution:
-| Emotion | Count |
-|---------|-------|
-| Neutral | 32    |
-| Happy   | 32    |
-| Sad     | 32    |
-| Angry   | 32    |
+# 4. Testowanie wytrenowanych modeli i wyniki
 
-## Test dataset distribution:
-| Emotion | Count |
-|---------|-------|
-| Neutral | 48    |
-| Happy   | 48    |
-| Sad     | 48    |
-| Angry   | 48    |
+Przetestowano wszystkie wytrenowane modele na zbiorach danych nEMO i RAVDESS. Wyniki najlepszych modeli i wnioski, które z nich wynikały wypisano w pliku [Results.md](https://github.com/Pamdzia/praktyki-techmo/blob/main/Results.md). Dla najlepszych modeli wypisano także Classification Report znajdujące się w pliku [ClassificationReports.md](https://github.com/Pamdzia/praktyki-techmo/blob/main/ClassificationReports.md), a macierze pomyłek w pliku [ConfusionMatrixes.md](https://github.com/Pamdzia/praktyki-techmo/blob/main/ConfusionMatrixes.md). Wszystkie wyniki classification report i confusion matrix znajdują się w [folderze](https://github.com/Pamdzia/praktyki-techmo/blob/main/ConfusionMatrixes.md) (nazwa_modelu_zbior_na_ktorym_train_zbior_test). Dodatkowo całość dla zbioru nEMO i RAVDESS znajdują się pod linkami: [nEMO](https://github.com/Pamdzia/praktyki-techmo/blob/main/experiments_results/test_results_1507_nEMO.csv), [RAVDESS](https://github.com/Pamdzia/praktyki-techmo/blob/main/experiments_results/test_results_1507_RAVDESS.csv). Wyniki F1 score dla każdego modelu znajdują się w pliku [ModelsF1Comparasion.md](https://github.com/Pamdzia/praktyki-techmo/blob/main/ModelsF1Comparasion.md)
 
-## Summary
-Total number of files removed during balancing and equalizing: 0
+# 5. Wnioski
 
+Napisano skrypt [best-emotions.py](https://github.com/Pamdzia/praktyki-techmo/blob/main/data-testing/best-emotions.py), który umożlwia uzyskanie plików opisujących najlepiej i najgorzej (poniżej 0.2) wykrywane emocje dla każdego modelu na podstawie precision, recall i f1-score. Uzyskane pliki znajdują się w folderze [data-testing](https://github.com/Pamdzia/praktyki-techmo/tree/main/data-testing), nazwy plików zaczynają się od precision/recall/f1-score, RAVDESS i nEMO to nazwa zbioru na których modele były testowane, dodatkowa nazwa emo_DB oznacza, że modele były trenowane na tym zbiorze danych. 
 
-## Podział zbioru danych nEMO
+- dokładny opis plików z precision i wnioski końcowe znajdują się w pliku [SummaryUpdated.md](https://github.com/Pamdzia/praktyki-techmo/blob/main/SummaryUpdated.md)
 
-## Original dataset distribution:
-| Emotion | Count |
-|---------|-------|
-| Neutral | 809   |
-| Sad     | 769   |
-| Happy   | 749   |
-| Angry   | 749   |
+# WNIOSEK KOŃCOWY
+Język ma wpływ na skuteczność rozpoznawania emocji, co jest widoczne w tendencji, że modele trenowane na jednym języku mają ogromne trudności z rozpoznawaniem emocji w innym języku co może być spowodowane tym, że dane były z dwóch zupełnie innych zbiorów. Zbiory trenowane na jednym zbiorze, a testowane na drugim radziły sobie nienajgorzej z emocją "sad" co może dowodzić temu, że emocja smutku wyrażana w obu językach posiada podobne cechy. Modele wykazują wyższą skuteczność, gdy są trenowane i testowane na tym samym zbiorze danych (szczególnie dla zbioru danych w języku angielskim), jest to naturalne zjawisko aczkolwiek zbyt niskie wyniki (praktycznie zerowa precyzja w każdym modelu dla happy i neutral testowanych na języku angielskim i trenowanym na języku polskim) mogą świadczyć również o tym, że cechy emocji wyrażanych w obu językach są inne.
 
-## Train dataset distribution:
-| Emotion | Count |
-|---------|-------|
-| Neutral | 578   |
-| Sad     | 576   |
-| Happy   | 570   |
-| Angry   | 569   |
+Na podstawie wyników testów (język polski i angielski) modeli trenowanych na języku niemieckim można zauważyć, że w przypadku języka polskiego najlepiej rozpoznawaną emocją jest emocja smutku, potrafiła ona w 5 eksperyemtach osiagnąc precyzję równą 1, emocja złości uzyskiwała niską precyzję w wielu eksperymentach, tylko w jednym (random_forest_emo_db uzyskała precyzję pozwyżej 0.5) Podczas testowania na języku angielskim najlepsze wyniki uzyskano dla emocji złości. Emocja smutku natomiast wynosiła ponizej 0.2 w większości z eksperymentów, z tego wynika, że o ile emocja smutku zawiera podobne cechy w języku polskim i angielskim, cechy te różnią się na tyle, że podczas testowania na modelach, które były trenowane na innym języku emocja ta nie jest rozpoznawana w obu przypadkach.
 
-## Dev dataset distribution:
-| Emotion | Count |
-|---------|-------|
-| Angry   | 90    |
-| Happy   | 89    |
-| Neutral | 86    |
-| Sad     | 85    |
-
-## Test dataset distribution:
-| Emotion | Count |
-|---------|-------|
-| Happy   | 85    |
-| Angry   | 85    |
-| Sad     | 85    |
-| Neutral | 85    |
-
-## Summary
-Total number of files removed during balancing and equalizing: 93
 
