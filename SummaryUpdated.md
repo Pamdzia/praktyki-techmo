@@ -15,8 +15,11 @@
 
 ## pełne wyniki
 [wyniki precyzji dla modeli testowanych na zbiorze danych nEMO i trenowanych na RAVDESS/nEMO/RAVDESS+nEMO](https://github.com/Pamdzia/praktyki-techmo/blob/main/data-testing/precision_results_nEMO.txt)
+
 [wyniki precyzji dla modeli testowanych na zbiorze danych nEMO i trenowanych na emoDB](https://github.com/Pamdzia/praktyki-techmo/blob/main/data-testing/precision_results_emo_DB_nEMO.txt)
+
 [wyniki precyzji dla modeli testowanych na zbiorze danych RAVDESS i trenowanych na RAVDESS/nEMO/RAVDESS+nEMO](https://github.com/Pamdzia/praktyki-techmo/blob/main/data-testing/precision_results_RAVDESS.txt)
+
 [wyniki precyzji dla modeli testowanych na zbiorze danych RAVDESS i trenowanych na emoDB](https://github.com/Pamdzia/praktyki-techmo/blob/main/data-testing/precision_results_emo_DB_RAVDESS.txt)
 
 ## Testowanie na nEMO modeli trenowanych na RAVDESS
