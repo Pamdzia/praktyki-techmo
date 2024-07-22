@@ -42,7 +42,7 @@ Uruchamiany pipeline wygląda następująco:
 ## Skrypt four_emotions_data_division
 - Wczytanie pełnych plików csv z wyekstrachowanymi cechami
 - Podzielenie korpusu na zbiory train, test, dev wykonując balansowanie ilości nagrań z naciskem na wyrównany podział emocji w zbiorze testowym [dokładne liczby znajdują się w pliku Data.md](https://github.com/Pamdzia/praktyki-techmo/blob/main/Data.md)
-## W razie potrzeby użytkownik może również ręcznie uruchomić pojedyncze skrypty, bądź przekształcić je pod inne zbiory danych, instrukcja dla poszczególnych skryptów znajduje się [tutaj]()
+## W razie potrzeby użytkownik może również ręcznie uruchomić pojedyncze skrypty, bądź przekształcić je pod inne zbiory danych, instrukcja dla poszczególnych skryptów znajduje się [tutaj](https://github.com/Pamdzia/praktyki-techmo/blob/main/Manual.md)
 Skrypt bash przygotowujący datasety RAVDESS oraz nEMO wraz z ich pobraniem i uzyskaniem cech z wykorzystaniem MFCC znajduje się w *data-utils*, posiada on 5 zmiennych do ustalenia ściezek gdzie zostaną pobrane zipy z danymi, gdzie zapiszemy rozpakowane datasety oraz gdzie będą się znajdować csvki wynikowe, zarówno te pełne jak i pdozielone na sety train, dev, test.
 
 Aby ręcznie przygotować zbiory należy:
