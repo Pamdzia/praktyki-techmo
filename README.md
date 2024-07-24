@@ -71,11 +71,18 @@ Przetestowano wszystkie wytrenowane modele na zbiorach danych nEMO i RAVDESS. Wy
 
 Aby przetestować dowolny z wytrenowanych modeli (posiadających nazwę zgodną z tym jaka to architektura modelu) należy uruchomić skrypt [simple_inference](https://github.com/Pamdzia/praktyki-techmo/blob/main/simple_inference.py) znajdujący się w katalogu głównym projektu. Skrypt ten przyjmuje dwa argumenty wejściowe --model_dir gdzie podaje się ścieżkę do folderu z modelem oraz --audio_path gdzie podawana jest ścieżka do pliku .wav, jeśli nazwa modelu jest zgodna z typem architektury skrypt na jej podstawie wczyta wszystkie wymagane pliki .pkl z folderu modelu
 
-Przykład jak wykonać inferencję, 
+Przykład jak wykonać inferencję, na jednym z gotowych modeli wykorzystując jedno z przykładowych nagrań, nagrania te są bazowane na zbiorze testowym RAVDESS i są jedną przykładową emocją, można jest znaleźć w [test_recordings](https://github.com/Pamdzia/praktyki-techmo/tree/main/test_recordings)
 
 ```bash
-python 
+python simple_inference.py --model_dir training_model/knn_RAVDESS --audio_path test_recordings/angry.wav
 ```
+
+Po uruchomieniu komendy użytkownik powinien zobaczyć wynik detekcji emocji:
+
+```bash
+Predykowana emocja: angry
+```
+
 
 # 5. Wnioski
 
