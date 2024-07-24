@@ -67,6 +67,16 @@ Do uruchomienia podstawowego pipeline testowego (wykonanie testów na wszystkich
 
 Przetestowano wszystkie wytrenowane modele na zbiorach danych nEMO i RAVDESS. Wyniki najlepszych modeli i wnioski, które z nich wynikały wypisano w pliku [Results.md](https://github.com/Pamdzia/praktyki-techmo/blob/main/Results.md). Dla najlepszych modeli wypisano także Classification Report znajdujące się w pliku [ClassificationReports.md](https://github.com/Pamdzia/praktyki-techmo/blob/main/ClassificationReports.md), a macierze pomyłek w pliku [ConfusionMatrixes.md](https://github.com/Pamdzia/praktyki-techmo/blob/main/ConfusionMatrixes.md). Wszystkie wyniki classification report i confusion matrix znajdują się w [folderze](https://github.com/Pamdzia/praktyki-techmo/blob/main/ConfusionMatrixes.md) (nazwa_modelu_zbior_na_ktorym_train_zbior_test). Dodatkowo całość dla zbioru nEMO i RAVDESS znajdują się pod linkami: [nEMO](https://github.com/Pamdzia/praktyki-techmo/blob/main/experiments_results/test_results_1507_nEMO.csv), [RAVDESS](https://github.com/Pamdzia/praktyki-techmo/blob/main/experiments_results/test_results_1507_RAVDESS.csv). Wyniki F1 score dla każdego modelu znajdują się w pliku [ModelsF1Comparasion.md](https://github.com/Pamdzia/praktyki-techmo/blob/main/ModelsF1Comparasion.md)
 
+## 4.3. Inferencja modelu
+
+Aby przetestować dowolny z wytrenowanych modeli (posiadających nazwę zgodną z tym jaka to architektura modelu) należy uruchomić skrypt [simple_inference](https://github.com/Pamdzia/praktyki-techmo/blob/main/simple_inference.py) znajdujący się w katalogu głównym projektu. Skrypt ten przyjmuje dwa argumenty wejściowe --model_dir gdzie podaje się ścieżkę do folderu z modelem oraz --audio_path gdzie podawana jest ścieżka do pliku .wav, jeśli nazwa modelu jest zgodna z typem architektury skrypt na jej podstawie wczyta wszystkie wymagane pliki .pkl z folderu modelu
+
+Przykład jak wykonać inferencję, 
+
+```bash
+python 
+```
+
 # 5. Wnioski
 
 Napisano skrypt [best-emotions.py](https://github.com/Pamdzia/praktyki-techmo/blob/main/data-testing/best-emotions.py), który umożlwia uzyskanie plików opisujących najlepiej i najgorzej (poniżej 0.2) wykrywane emocje dla każdego modelu na podstawie precision, recall i f1-score. Uzyskane pliki znajdują się w folderze [data-testing](https://github.com/Pamdzia/praktyki-techmo/tree/main/data-testing), nazwy plików zaczynają się od precision/recall/f1-score, RAVDESS i nEMO to nazwa zbioru na których modele były testowane, dodatkowa nazwa emo_DB oznacza, że modele były trenowane na tym zbiorze danych. 
