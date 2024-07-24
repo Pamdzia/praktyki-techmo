@@ -30,6 +30,40 @@ Dodatkowe zbiory treningowe
 
 Napisano skrypt *install.sh* [pełny skrypt](https://github.com/Pamdzia/praktyki-techmo/blob/main/install.sh), który przygotowuje wirtualne środowisko pythona 3.10 oraz korzysta z *setup.py* [pełny skrypt](https://github.com/Pamdzia/praktyki-techmo/blob/main/setup.py), który konfiguruje pakiet Python o nazwie 'praktyki-techmo' w wersji 0.9, wyszukuje i dołącza wszystkie jego podpakiety oraz instaluje wymagane zależności wymienione w pliku 'requirements.txt'
 
+Aby przygotować projekt należy wykonać poniższe kroki:
+
+```bash
+git clone https://github.com/Pamdzia/praktyki-techmo.git
+cd praktyki-techmo
+./install.sh
+```
+
+Instalacja środowiska może potrwać do kilku minut w zaleźności od szybkości transferu po instalacji powinna się pojawić informacja w terminalu:
+
+```bash
+Proszę pamiętać o włączeniu środowiska wirtualnego
+```
+
+Skrypt generuje środowisko wirtualne które można znaleźć pod nazwa `.venv` w katalogu głównym, aby je uruchomić musimy zastosować:
+
+Dla systemów Unix/MacOS:
+
+```bash
+source .venv/bin/activate
+```
+
+Natomiast dla systemu Windows:
+
+```powershell
+.\.venv\Scripts\activate
+```
+
+Jeśli uruchomienie środowiska się powiodło w terminalu powinna wyświetlać się nazwa środowisko wirtualnego w tym przypadku `.venv`::
+
+```bash
+(.venv) praktyki-techmo % 
+```
+
 # 2. Przygotowanie danych
 
 Podstawowe ustawienie zbiorów danych pod dalszą pracę jest wykonywane z wykorzytaniem skryptów [dataset_setup.sh](https://github.com/Pamdzia/praktyki-techmo/blob/main/data-utils/datasets_setup.sh) oraz [dataset_setup_win.ps1](https://github.com/Pamdzia/praktyki-techmo/blob/main/data-utils/dataset_setup_win.ps1) w zależności od wykorzystywanego systemu Ubuntu/MacOS lub Windows 
