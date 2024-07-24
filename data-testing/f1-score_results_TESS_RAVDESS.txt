@@ -1,0 +1,40 @@
+Experiment: SVC_tess
+Best Recognized Emotion: angry (F1-score: 0.52)
+Emotions with F1-score > 0.5: angry
+Emotions with F1-score < 0.2: happy (F1-score: 0.06), sad (F1-score: 0.15)
+
+Experiment: SVC_with_LDA_tess
+Best Recognized Emotion: angry (F1-score: 0.53)
+Emotions with F1-score > 0.5: angry
+Emotions with F1-score < 0.2: None
+
+Experiment: SVC_with_PCA_tess
+Best Recognized Emotion: neutral (F1-score: 0.52)
+Emotions with F1-score > 0.5: angry, neutral
+Emotions with F1-score < 0.2: happy (F1-score: 0.0), sad (F1-score: 0.04)
+
+Experiment: knn_lda_tess
+Best Recognized Emotion: angry (F1-score: 0.55)
+Emotions with F1-score > 0.5: angry
+Emotions with F1-score < 0.2: None
+
+Experiment: knn_tess
+Best Recognized Emotion: angry (F1-score: 0.49)
+Emotions with F1-score > 0.5: 
+Emotions with F1-score < 0.2: happy (F1-score: 0.17), sad (F1-score: 0.19)
+
+Experiment: knn_with_PCA_tess
+Best Recognized Emotion: angry (F1-score: 0.48)
+Emotions with F1-score > 0.5: 
+Emotions with F1-score < 0.2: happy (F1-score: 0.03)
+
+Experiment: mlp_tess
+Best Recognized Emotion: neutral (F1-score: 0.55)
+Emotions with F1-score > 0.5: neutral
+Emotions with F1-score < 0.2: happy (F1-score: 0.09), sad (F1-score: 0.15)
+
+Experiment: random_forest_tess
+Best Recognized Emotion: angry (F1-score: 0.65)
+Emotions with F1-score > 0.5: angry, neutral
+Emotions with F1-score < 0.2: happy (F1-score: 0.14)
+

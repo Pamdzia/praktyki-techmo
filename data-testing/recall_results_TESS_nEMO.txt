@@ -1,0 +1,40 @@
+Experiment: SVC_tess
+Best Recognized Emotion: happy (Recall: 0.82)
+Emotions with Recall > 0.5: happy, sad
+Emotions with Recall < 0.2: angry (Recall: 0.08), neutral (Recall: 0.02)
+
+Experiment: SVC_with_LDA_tess
+Best Recognized Emotion: neutral (Recall: 0.81)
+Emotions with Recall > 0.5: happy, neutral
+Emotions with Recall < 0.2: angry (Recall: 0.19)
+
+Experiment: SVC_with_PCA_tess
+Best Recognized Emotion: happy (Recall: 0.8)
+Emotions with Recall > 0.5: happy, sad
+Emotions with Recall < 0.2: angry (Recall: 0.09), neutral (Recall: 0.06)
+
+Experiment: knn_lda_tess
+Best Recognized Emotion: happy (Recall: 0.78)
+Emotions with Recall > 0.5: happy, neutral
+Emotions with Recall < 0.2: angry (Recall: 0.12)
+
+Experiment: knn_tess
+Best Recognized Emotion: sad (Recall: 0.89)
+Emotions with Recall > 0.5: sad
+Emotions with Recall < 0.2: angry (Recall: 0.02), neutral (Recall: 0.02)
+
+Experiment: knn_with_PCA_tess
+Best Recognized Emotion: sad (Recall: 0.47)
+Emotions with Recall > 0.5: 
+Emotions with Recall < 0.2: angry (Recall: 0.05), neutral (Recall: 0.02)
+
+Experiment: mlp_tess
+Best Recognized Emotion: sad (Recall: 0.69)
+Emotions with Recall > 0.5: happy, sad
+Emotions with Recall < 0.2: angry (Recall: 0.06), neutral (Recall: 0.02)
+
+Experiment: random_forest_tess
+Best Recognized Emotion: sad (Recall: 0.38)
+Emotions with Recall > 0.5: 
+Emotions with Recall < 0.2: angry (Recall: 0.18), happy (Recall: 0.13), neutral (Recall: 0.0)
+

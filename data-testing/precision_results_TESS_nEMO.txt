@@ -1,0 +1,40 @@
+Experiment: SVC_tess
+Best Recognized Emotion: sad (Precision: 0.76)
+Emotions with Precision > 0.5: neutral, sad
+Emotions with Precision < 0.2: angry (Precision: 0.14)
+
+Experiment: SVC_with_LDA_tess
+Best Recognized Emotion: sad (Precision: 0.9)
+Emotions with Precision > 0.5: angry, happy, sad
+Emotions with Precision < 0.2: None
+
+Experiment: SVC_with_PCA_tess
+Best Recognized Emotion: sad (Precision: 0.78)
+Emotions with Precision > 0.5: sad
+Emotions with Precision < 0.2: angry (Precision: 0.16)
+
+Experiment: knn_lda_tess
+Best Recognized Emotion: sad (Precision: 0.75)
+Emotions with Precision > 0.5: angry, happy, sad
+Emotions with Precision < 0.2: None
+
+Experiment: knn_tess
+Best Recognized Emotion: sad (Precision: 0.55)
+Emotions with Precision > 0.5: sad
+Emotions with Precision < 0.2: angry (Precision: 0.02), neutral (Precision: 0.13)
+
+Experiment: knn_with_PCA_tess
+Best Recognized Emotion: sad (Precision: 0.6)
+Emotions with Precision > 0.5: sad
+Emotions with Precision < 0.2: angry (Precision: 0.04), neutral (Precision: 0.11)
+
+Experiment: mlp_tess
+Best Recognized Emotion: sad (Precision: 0.87)
+Emotions with Precision > 0.5: sad
+Emotions with Precision < 0.2: angry (Precision: 0.07), neutral (Precision: 0.17)
+
+Experiment: random_forest_tess
+Best Recognized Emotion: sad (Precision: 0.84)
+Emotions with Precision > 0.5: sad
+Emotions with Precision < 0.2: angry (Precision: 0.08), happy (Precision: 0.1), neutral (Precision: 0.0)
+
