@@ -19,6 +19,7 @@ Główne zbiory eksperymentu badania różżmić między polskim i angielskim wy
 
 Zbiór w języku niemieckim do treningu modeli bazując na innym języku niż testowane, zgodnie z artykułem:
 - [emoDB](https://www.kaggle.com/datasets/piyushagni5/berlin-database-of-emotional-speech-emodb) - Język niemiecki
+  
 Dodatkowe zbiory treningowe 
 - [IEMOCAP](https://sail.usc.edu/iemocap/) - Język angielski
 - [SAVEE](https://www.kaggle.com/datasets/ejlok1/surrey-audiovisual-expressed-emotion-savee) - Język angielski
