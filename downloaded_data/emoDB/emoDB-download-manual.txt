@@ -1,0 +1,2 @@
+emoDB is possible to download from Kaggle.com after registering: https://www.kaggle.com/datasets/piyushagni5/berlin-database-of-emotional-speech-emodb?resource=download, 
+move downloaded wav folder to this location, it's path is praktyki-techmo/downloaded_data/emoDB
