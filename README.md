@@ -121,7 +121,8 @@ Pipeline do konfigurowania zbiorów nEMO/RAVDESS wygląda następująco (pipelin
 - Wyciągnięcie cech z nagrań (z ich wartościami mean, var, max, min, range) obejmujących: po 12 cech MFCC, pitch, energy, zcr
 ## Skrypt four_emotions_data_division
 - Wczytanie pełnych plików csv z wyekstrachowanymi cechami
-- Podzielenie korpusu na zbiory train, test, dev wykonując balansowanie ilości nagrań z naciskem na wyrównany podział emocji w zbiorze testowym [dokładne liczby znajdują się w pliku Data.md](https://github.com/Pamdzia/praktyki-techmo/blob/main/Data.md)
+- Podzielenie korpusu na zbiory train, test, dev wykonując balansowanie ilości nagrań z naciskem na wyrównany podział emocji w zbiorze testowym, w przybliżeniu zbiory zostały podzielone (train/dev/test) w ilościach (573/87/85) w języku polskim nEMO, (296/32/48) w języku angielskim RAVDESS i (51/7/4) w języku niemieckim emoDB
+- [dokładne liczby znajdują się w pliku Data.md](https://github.com/Pamdzia/praktyki-techmo/blob/main/Data.md)
 ## W razie potrzeby użytkownik może również ręcznie uruchomić pojedyncze skrypty, bądź przekształcić je pod inne zbiory danych, instrukcja dla poszczególnych skryptów znajduje się [tutaj](https://github.com/Pamdzia/praktyki-techmo/blob/main/Manual.md)
 
 # 3. Przygotowanie danych, do treningu i trening modeli 
