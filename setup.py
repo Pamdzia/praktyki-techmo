@@ -5,7 +5,7 @@ with open('requirements.txt') as f:
 
 setup(
     name='praktyki-techmo',
-    version='0.9', #Version 1.0 is planned to be the one at the end of the practices
+    version='0.9', #Wersja 1.0 planowana na koniec prakttyk
     packages=find_packages(),
     install_requires=required,
 )
