@@ -74,3 +74,44 @@ Total number of files removed during balancing and equalizing: 0
 
 ## Summary
 Total number of files removed during balancing and equalizing: 93
+
+
+## Podział zbioru danych emoDB
+
+## Original dataset distribution:
+| Emotion | Count |
+|---------|-------|
+| Neutral | 79    |
+| Sad     | 62    |
+| Happy   | 71    |
+| Angry   | 127   |
+
+## Train dataset distribution:
+| Emotion | Count |
+|---------|-------|
+| Neutral | 45    |
+| Sad     | 51    |
+| Happy   | 51    |
+| Angry   | 51    |
+
+## Dev dataset distribution:
+| Emotion | Count |
+|---------|-------|
+| Angry   | 7    |
+| Happy   | 5    |
+| Neutral | 9    |
+| Sad     | 7    |
+
+## Test dataset distribution:
+| Emotion | Count |
+|---------|-------|
+| Happy   | 4     |
+| Angry   | 4     |
+| Sad     | 4     |
+| Neutral | 4     |
+
+## Summary
+Total number of files removed during balancing and equalizing: 97
+
+
+
