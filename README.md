@@ -12,14 +12,18 @@ Ninejszy projekt bazowany jest na artykule:
 # Dane
 
 Do pracy nad emocjami wykorzystywane są dane z niniejszych zbiorów 
-- [IEMOCAP](https://sail.usc.edu/iemocap/) - Język angielski
+
+Główne zbiory eksperymentu badania różżmić między polskim i angielskim wykorzystywane do treningów oraz do wszystkich testów:
 - [RAVDESS](https://www.kaggle.com/datasets/uwrfkaggler/ravdess-emotional-speech-audio) - Język angielski
-- [TESS](https://tspace.library.utoronto.ca/handle/1807/24487) - Język angielski
+- [nEMO](https://huggingface.co/datasets/amu-cai/nEMO) - Język polski
+
+Zbiór w języku niemieckim do treningu modeli bazując na innym języku niż testowane, zgodnie z artykułem:
+- [emoDB](https://www.kaggle.com/datasets/piyushagni5/berlin-database-of-emotional-speech-emodb) - Język niemiecki
+Dodatkowe zbiory treningowe 
+- [IEMOCAP](https://sail.usc.edu/iemocap/) - Język angielski
 - [SAVEE](https://www.kaggle.com/datasets/ejlok1/surrey-audiovisual-expressed-emotion-savee) - Język angielski
 - [JL-Corpus](https://www.kaggle.com/datasets/tli725/jl-corpus) - Język angielski
 - [MSP_Podcast](https://ecs.utdallas.edu/research/researchlabs/msp-lab/MSP-Podcast.html) - Język angielski
-- [nEMO](https://huggingface.co/datasets/amu-cai/nEMO) - Język polski
-- [emoDB](https://www.kaggle.com/datasets/piyushagni5/berlin-database-of-emotional-speech-emodb) - Język niemiecki
 
 # 1. Przygotowanie środowiska do pracy
 
