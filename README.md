@@ -63,6 +63,8 @@ Do uruchomienia podstawowego pipeline testowego (wykonanie testów na wszystkich
 
 **Dodatkowe skrypty do badań oraz testów również na transformerach jak i dokładna instrukcja tłumacząca zmienne w skrypcie znajduje się [tutaj](https://github.com/Pamdzia/praktyki-techmo/blob/main/Manual.md)**
 
+## 4.2. Testy modeli oraz wyniki
+
 Przetestowano wszystkie wytrenowane modele na zbiorach danych nEMO i RAVDESS. Wyniki najlepszych modeli i wnioski, które z nich wynikały wypisano w pliku [Results.md](https://github.com/Pamdzia/praktyki-techmo/blob/main/Results.md). Dla najlepszych modeli wypisano także Classification Report znajdujące się w pliku [ClassificationReports.md](https://github.com/Pamdzia/praktyki-techmo/blob/main/ClassificationReports.md), a macierze pomyłek w pliku [ConfusionMatrixes.md](https://github.com/Pamdzia/praktyki-techmo/blob/main/ConfusionMatrixes.md). Wszystkie wyniki classification report i confusion matrix znajdują się w [folderze](https://github.com/Pamdzia/praktyki-techmo/blob/main/ConfusionMatrixes.md) (nazwa_modelu_zbior_na_ktorym_train_zbior_test). Dodatkowo całość dla zbioru nEMO i RAVDESS znajdują się pod linkami: [nEMO](https://github.com/Pamdzia/praktyki-techmo/blob/main/experiments_results/test_results_1507_nEMO.csv), [RAVDESS](https://github.com/Pamdzia/praktyki-techmo/blob/main/experiments_results/test_results_1507_RAVDESS.csv). Wyniki F1 score dla każdego modelu znajdują się w pliku [ModelsF1Comparasion.md](https://github.com/Pamdzia/praktyki-techmo/blob/main/ModelsF1Comparasion.md)
 
 # 5. Wnioski
