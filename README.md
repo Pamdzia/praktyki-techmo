@@ -58,7 +58,7 @@ Natomiast dla systemu Windows:
 .\.venv\Scripts\activate
 ```
 
-Jeśli uruchomienie środowiska się powiodło w terminalu powinna wyświetlać się nazwa środowisko wirtualnego w tym przypadku `.venv`::
+Jeśli uruchomienie środowiska się powiodło w terminalu powinna wyświetlać się nazwa środowisko wirtualnego w tym przypadku `.venv`:
 
 ```bash
 (.venv) praktyki-techmo % 
@@ -67,7 +67,48 @@ Jeśli uruchomienie środowiska się powiodło w terminalu powinna wyświetlać
 # 2. Przygotowanie danych
 
 Podstawowe ustawienie zbiorów danych pod dalszą pracę jest wykonywane z wykorzytaniem skryptów [dataset_setup.sh](https://github.com/Pamdzia/praktyki-techmo/blob/main/data-utils/datasets_setup.sh) oraz [dataset_setup_win.ps1](https://github.com/Pamdzia/praktyki-techmo/blob/main/data-utils/dataset_setup_win.ps1) w zależności od wykorzystywanego systemu Ubuntu/MacOS lub Windows 
-Uruchamiany pipeline wygląda następująco:
+
+Aby uruchomić skrypty przygotowujące dane należy przejść do folderu folderu `data-utils` w którym znajdują się potrzebne narzędzia do przygotowania zbiorów danych, zbiory nEMO oraz RAVDESS są dostępne do pobrania i przekształcenia, natomiast emoDB, który także był wykorzystywany do wszystkich treningów jest dostępny po zalogowaniu na stronie Kaggle do ręcznego pobrania. Do przygotowania podstawowych zbiorów danych z tego ekseprymentu należy:
+
+Przejść do katalogu z narzędziami, załóżmy, że znajdujemy się w katalogu głównym `praktyki-techmo`:
+
+```bash
+cd data-utils
+```
+
+Następnie należy uruchomić skrypt odpowiedni dla systemu operacyjnego::
+
+Unix/MacOS:
+```bash
+./datasets_setup.sh
+```
+
+Windows:
+
+```powershell
+.\dataset_setup_win.ps1
+```
+
+W terminalu można zobaczyć postęp prac od paska postępu przy pobieraniu korpusów, ekstrakcji cech, aż po wyświetlenie finalnych tabel z ilością nagrać dla każdej emocji oraz informacją ile nagrań zostało usuniętych, tak wygląda ostatnie 8 wierszy po zakończonym procesie:
+
+```bash
+Test dataset distribution:
+emotion
+happy      85
+angry      85
+sad        85
+neutral    85
+Name: count, dtype: int64
+Total number of files removed during balancing and equalizing: 93
+```
+
+Zbiór emoDB, zresztą jak i RAVDESS oraz nEMO ma wyciągnięte już features i jest zapisany w [four_emotions_csvs_all](https://github.com/Pamdzia/praktyki-techmo/tree/main/four_emotions_csvs_all) umożliwiając podział go na zbiory train, dev i test bez potrzeby wyciągania cech z nagrań, podzielone wstępnie zostały zbiory nEMO, RAVDESS, emoDB oraz iemocap do którego dostęp należy uzyskać kontaktując się z twórcami. Jednakże zostały przygotowane skrypty do własnoręcznego odtwrozenia ekseprymentu dla emoDB, znajduje się plik [tekstowy](https://github.com/Pamdzia/praktyki-techmo/blob/main/downloaded_data/emoDB/emoDB-download-manual.txt) znajduje się w nim link do strony na Kaggle ze zbiorem do pobrania wraz z informacją że należy folder z pobranymi plikami wav skopiować do folderu w którym znajduje się owy plik. Po skopiowaniu danych do folderu, aby przygotować ręcznie zbiory dla emoDB użytkownik poiwnien uruchomić skrypt znajdujący się analogicznie do poprzednich w `data-utils`
+
+```bash
+emoDB_setup.sh
+```
+
+Pipeline do konfigurowania zbiorów nEMO/RAVDESS wygląda następująco (pipeline dla emoDB korzysta z nieco zmodyfikowanych skryptów csv_setter oraz dataset_setup)
 ## Skrypt data_downloader
 - Pobranie podstawowych zbiorów danych (RAVDESS oraz nEMO)
 - Rozpakowanie pobranych nagrań do odpowiednich folderów
@@ -93,7 +134,16 @@ Dane zostały w każdym pliku osobno przygotowane do treningu (konwersja określ
 
 ## 4.1. Skrypty testujące modele:
 
-Do uruchomienia podstawowego pipeline testowego (wykonanie testów na wszystkich modelach znajdujących się w folderze) należy przejść do folderu *training_model* oraz uruchomić skrypt [testing_pipeline](https://github.com/Pamdzia/praktyki-techmo/blob/main/training_model/testing_pipeline.sh) skrypt ten uruchamia testy na wszystkich modelach dodając od razu zbiory testowe dla języka polskiego oraz angielskiego, pipeline korzysta z [testing](https://github.com/Pamdzia/praktyki-techmo/blob/main/training_model/testing.py) który odpowiada za logikę uruchamiania zapisanych model iz checkpointów, rozróżniając po nazwach co należy wczytać. Skrypt kalkuluje metryki, generuje macierz pomyłek zapisując wyniki domyślnie w folderze experiments_results w ustawionej dla danego eksperymentu nowym folderze. Generowane pliki to zbiorcze pliki csv z wynikami znajdujące się w folderze ogólnym wyników eksperymentów oraz poszczególne pliki w fodlerze eksperymentu zawierające f1-score oraz pliki zapisywane osobno dla każdego z modeli pod ppojedynczy zbiór testowy w skład których wchodzą classification report z wynikami dla każdej emocji, confusion matrix w formie csv oraz confusion matrix w formie graficznej. 
+Do uruchomienia podstawowego pipeline testowego (wykonanie testów na wszystkich modelach znajdujących się w folderze) należy przejść do folderu *training_model* oraz uruchomić skrypt [testing_pipeline](https://github.com/Pamdzia/praktyki-techmo/blob/main/training_model/testing_pipeline.sh) 
+
+Zakładając, że ścieżką podstawową jest główny katalog `praktyki-techmo`, aby uruchomić testy można skorzystać z: (zarówno pipeline testujący jak i przygotowanie zbioru emoDB zostały przygotowane tylko dla systemów Unix/MacOS z pominięciem skryptów powershell dla Windowsa)
+
+```bash
+cd treining_model
+./testing_pipeline.sh
+```
+
+skrypt ten uruchamia testy na wszystkich modelach dodając od razu zbiory testowe dla języka polskiego oraz angielskiego, pipeline korzysta z [testing](https://github.com/Pamdzia/praktyki-techmo/blob/main/training_model/testing.py) który odpowiada za logikę uruchamiania zapisanych model iz checkpointów, rozróżniając po nazwach co należy wczytać. Skrypt kalkuluje metryki, generuje macierz pomyłek zapisując wyniki domyślnie w folderze experiments_results w ustawionej dla danego eksperymentu nowym folderze. Generowane pliki to zbiorcze pliki csv z wynikami znajdujące się w folderze ogólnym wyników eksperymentów oraz poszczególne pliki w fodlerze eksperymentu zawierające f1-score oraz pliki zapisywane osobno dla każdego z modeli pod ppojedynczy zbiór testowy w skład których wchodzą classification report z wynikami dla każdej emocji, confusion matrix w formie csv oraz confusion matrix w formie graficznej. 
 
 **Dodatkowe skrypty do badań oraz testów również na transformerach jak i dokładna instrukcja tłumacząca zmienne w skrypcie znajduje się [tutaj](https://github.com/Pamdzia/praktyki-techmo/blob/main/Manual.md)**
 
