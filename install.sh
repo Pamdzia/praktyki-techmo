@@ -4,4 +4,4 @@ source .venv/bin/activate
 pip install --require-virtualenv --upgrade pip
 pip install --no-cache --require-virtualenv --editable .
 
-echo "Please remember to activate the environment"
+echo "Proszę pamiętać o włączeniu środowiska wirtualnego"
