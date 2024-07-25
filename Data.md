@@ -1,4 +1,4 @@
-# Tabele z danymi dla nEMO oraz RAVDESS podzielonymi na zbiory train, dev oraz test
+# Tabele z danymi dla nEMO, emoDB oraz RAVDESS podzielonymi na zbiory train, dev oraz test i zbiór TESS jako train
 
 ## Podział zbioru danych RAVDESS (calm jako neutral)
 
@@ -114,4 +114,21 @@ Total number of files removed during balancing and equalizing: 93
 Total number of files removed during balancing and equalizing: 97
 
 
+## Podział zbioru danych TESS (TESS został użyty jedynie do treningu)
+
+## Original dataset distribution:
+| Emotion | Count |
+|---------|-------|
+| Neutral | 400   |
+| Sad     | 400   |
+| Happy   | 400   |
+| Angry   | 400   |
+
+## Train dataset distribution:
+| Emotion | Count |
+|---------|-------|
+| Neutral | 400   |
+| Sad     | 400   |
+| Happy   | 400   |
+| Angry   | 400   |
 
