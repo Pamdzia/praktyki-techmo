@@ -126,11 +126,12 @@ Pipeline do konfigurowania zbiorów nEMO/RAVDESS wygląda następująco (pipelin
 - [dokładne liczby znajdują się w pliku Data.md](https://github.com/Pamdzia/praktyki-techmo/blob/main/Data.md)
 ## W razie potrzeby użytkownik może również ręcznie uruchomić pojedyncze skrypty, bądź przekształcić je pod inne zbiory danych, instrukcja dla poszczególnych skryptów znajduje się [tutaj](https://github.com/Pamdzia/praktyki-techmo/blob/main/Manual.md)
 
-# 3. Przygotowanie danych, do treningu i trening modeli 
+# 3. Przygotowanie danych do treningu i trening modeli 
 
 Dane zostały w każdym pliku osobno przygotowane do treningu (konwersja określonych kolumn danych na tablice numpy, usunięcie białych przestrzeni, label encoder, przygotowanie train, (dev w przypadku MLP) i test data, użycie StandartScaler). Następujące modele: MLP_from_git_updated - model Sequential z warstwami Dense i Dropout, MLP_from_git_updated2 - model Sequential z warstwami Dense, Dropout i BatchNormalization, SVC, SVC z LDA, SVC z PCA, kNN, kNN z LDA, kNN z PCA, MLPClassifier, random forest) zostały napisane i wytrenowane osobno dla każdego ze zbiorów danych: nEMO, RAVDESS, nEMO + RAVDESS, emoDB. Dla każdego modelu wybrano odpowiednie hiperparametry korzystając z siatki grid search. Dodatkowo wybrane modele zostały wytrenowane na zbiorze danych IEMOCAP ale z powodu niezadowalających wyników testowych nie kontynuowano pracy z tym zbiorem danych. Każdy wytrenowany model zapisano.
 
 - kody modeli znajdują się w folderze [training_model](https://github.com/Pamdzia/praktyki-techmo/tree/main/training_model) wszystkie zapisane modele znajdują się w odpowiednio nazwanych podfolderach folderu training_model
+- dodatkowo wytrenwano modele na zbiorze danych TESS po 400 plików dla każdej z emocji "sad", "neutral", "happy", "angry", gotowe wytrenowane modele znajdują się w folderze [TESS_models](https://github.com/Pamdzia/praktyki-techmo/tree/main/TESS_models)
 
 # 4. Testowanie wytrenowanych modeli i wyniki
 
@@ -152,6 +153,8 @@ skrypt ten uruchamia testy na wszystkich modelach dodając od razu zbiory testow
 ## 4.2. Testy modeli oraz wyniki
 
 Przetestowano wszystkie wytrenowane modele na zbiorach danych nEMO i RAVDESS. Wyniki najlepszych modeli i wnioski, które z nich wynikały wypisano w pliku [Results.md](https://github.com/Pamdzia/praktyki-techmo/blob/main/Results.md). Dla najlepszych modeli wypisano także Classification Report znajdujące się w pliku [ClassificationReports.md](https://github.com/Pamdzia/praktyki-techmo/blob/main/ClassificationReports.md), a macierze pomyłek w pliku [ConfusionMatrixes.md](https://github.com/Pamdzia/praktyki-techmo/blob/main/ConfusionMatrixes.md). Wszystkie wyniki classification report i confusion matrix znajdują się w [folderze](https://github.com/Pamdzia/praktyki-techmo/blob/main/ConfusionMatrixes.md) (nazwa_modelu_zbior_na_ktorym_train_zbior_test). Dodatkowo całość dla zbioru nEMO i RAVDESS znajdują się pod linkami: [nEMO](https://github.com/Pamdzia/praktyki-techmo/blob/main/experiments_results/test_results_1507_nEMO.csv), [RAVDESS](https://github.com/Pamdzia/praktyki-techmo/blob/main/experiments_results/test_results_1507_RAVDESS.csv). Wyniki F1 score dla każdego modelu znajdują się w pliku [ModelsF1Comparasion.md](https://github.com/Pamdzia/praktyki-techmo/blob/main/ModelsF1Comparasion.md)
+
+wyniki dla modeli trenowanych na zbiorze danych TESS znajdują się w folderze [TESS](https://github.com/Pamdzia/praktyki-techmo/tree/main/experiments_results/TESS) w experiments_results
 
 ## 4.3. Inferencja modelu
 
