@@ -25,7 +25,7 @@ Dodatkowe zbiory treningowe
 - [SAVEE](https://www.kaggle.com/datasets/ejlok1/surrey-audiovisual-expressed-emotion-savee) - Język angielski
 - [JL-Corpus](https://www.kaggle.com/datasets/tli725/jl-corpus) - Język angielski
 - [MSP_Podcast](https://ecs.utdallas.edu/research/researchlabs/msp-lab/MSP-Podcast.html) - Język angielski
-- [TESS](https://www.kaggle.com/datasets/ejlok1/toronto-emotional-speech-set-tess)
+- [TESS](https://www.kaggle.com/datasets/ejlok1/toronto-emotional-speech-set-tess) - Język angielski
 
 # 1. Przygotowanie środowiska do pracy
 
