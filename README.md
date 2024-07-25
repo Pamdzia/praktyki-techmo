@@ -19,17 +19,19 @@ Główne zbiory eksperymentu badania różnic między polskim i angielskim wykor
 
 Zbiór w języku niemieckim do treningu modeli bazując na innym języku niż testowane, zgodnie z artykułem:
 - [emoDB](https://www.kaggle.com/datasets/piyushagni5/berlin-database-of-emotional-speech-emodb) - Język niemiecki
+
+Zbiór w języku angielskim, aby zobaczyć czy cechy języka są podobne:
+- [TESS](https://www.kaggle.com/datasets/ejlok1/toronto-emotional-speech-set-tess) - Język angielski
   
 Dodatkowe zbiory treningowe 
 - [IEMOCAP](https://sail.usc.edu/iemocap/) - Język angielski
 - [SAVEE](https://www.kaggle.com/datasets/ejlok1/surrey-audiovisual-expressed-emotion-savee) - Język angielski
 - [JL-Corpus](https://www.kaggle.com/datasets/tli725/jl-corpus) - Język angielski
 - [MSP_Podcast](https://ecs.utdallas.edu/research/researchlabs/msp-lab/MSP-Podcast.html) - Język angielski
-- [TESS](https://www.kaggle.com/datasets/ejlok1/toronto-emotional-speech-set-tess) - Język angielski
 
 # 1. Przygotowanie środowiska do pracy
 
-Napisano skrypt *install.sh* [pełny skrypt](https://github.com/Pamdzia/praktyki-techmo/blob/main/install.sh), który przygotowuje wirtualne środowisko pythona 3.10 oraz korzysta z *setup.py* [pełny skrypt](https://github.com/Pamdzia/praktyki-techmo/blob/main/setup.py), który konfiguruje pakiet Python o nazwie 'praktyki-techmo' w wersji 0.9, wyszukuje i dołącza wszystkie jego podpakiety oraz instaluje wymagane zależności wymienione w pliku 'requirements.txt'
+Napisano skrypt *install.sh* [pełny skrypt](https://github.com/Pamdzia/praktyki-techmo/blob/main/install.sh), który przygotowuje wirtualne środowisko pythona 3.10 oraz korzysta z *setup.py* [pełny skrypt](https://github.com/Pamdzia/praktyki-techmo/blob/main/setup.py), który konfiguruje pakiet Python o nazwie 'praktyki-techmo' w wersji 0.9, wyszukuje i dołącza wszystkie jego podpakiety oraz instaluje wymagane zależności wymienione w pliku 'requirements.txt'.
 
 Aby przygotować projekt należy wykonać poniższe kroki:
 
@@ -103,13 +105,19 @@ Name: count, dtype: int64
 Total number of files removed during balancing and equalizing: 93
 ```
 
-Zbiór emoDB, zresztą jak i RAVDESS oraz nEMO ma wyciągnięte już features i jest zapisany w [four_emotions_csvs_all](https://github.com/Pamdzia/praktyki-techmo/tree/main/four_emotions_csvs_all) umożliwiając podział go na zbiory train, dev i test bez potrzeby wyciągania cech z nagrań, podzielone wstępnie zostały zbiory nEMO, RAVDESS, emoDB oraz iemocap do którego dostęp należy uzyskać kontaktując się z twórcami. Jednakże zostały przygotowane skrypty do własnoręcznego odtwrozenia ekseprymentu dla emoDB, znajduje się plik [tekstowy](https://github.com/Pamdzia/praktyki-techmo/blob/main/downloaded_data/emoDB/emoDB-download-manual.txt) znajduje się w nim link do strony na Kaggle ze zbiorem do pobrania wraz z informacją że należy folder z pobranymi plikami wav skopiować do folderu w którym znajduje się owy plik. Po skopiowaniu danych do folderu, aby przygotować ręcznie zbiory dla emoDB użytkownik poiwnien uruchomić skrypt znajdujący się analogicznie do poprzednich w `data-utils`
+Zbiór emoDB, zresztą jak i RAVDESS oraz nEMO ma wyciągnięte już features i jest zapisany w [four_emotions_csvs_all](https://github.com/Pamdzia/praktyki-techmo/tree/main/four_emotions_csvs_all) umożliwiając podział go na zbiory train, dev i test bez potrzeby wyciągania cech z nagrań, podzielone wstępnie zostały zbiory nEMO, RAVDESS, emoDB oraz iemocap do którego dostęp należy uzyskać kontaktując się z twórcami. Jednakże zostały przygotowane skrypty do własnoręcznego odtwrozenia ekseprymentu dla emoDB, znajduje się plik [tekstowy](https://github.com/Pamdzia/praktyki-techmo/blob/main/downloaded_data/emoDB/emoDB-download-manual.txt) znajduje się w nim link do strony na Kaggle ze zbiorem do pobrania wraz z informacją że należy folder z pobranymi plikami wav skopiować do folderu w którym znajduje się owy plik. Po skopiowaniu danych do folderu, aby przygotować ręcznie zbiory dla emoDB użytkownik poiwnien uruchomić skrypt znajdujący się analogicznie do poprzednich w `data-utils`.
 
 ```bash
 emoDB_setup.sh
 ```
 
-Pipeline do konfigurowania zbiorów nEMO/RAVDESS wygląda następująco (pipeline dla emoDB korzysta z nieco zmodyfikowanych skryptów csv_setter oraz dataset_setup)
+Sytuacja ze zbiorem TESS jest analogiczna do zbioru emoDB, jest on dostepny do pobrania na kaggle a samo przygotowanie również wygląda podobnie, należy folder z danymi wrzucić do folderu TESS zgodnie z instrukcją z pliku [tekstowego](https://github.com/Pamdzia/praktyki-techmo/blob/main/downloaded_data/TESS/TESS-download-manual.txt), co do skryptu przygotowującego dataset należy uruchomin ponownie będąc w folderze `data-utils`:
+
+```bash
+TESS_setup.sh
+```
+
+Pipeline do konfigurowania zbiorów nEMO/RAVDESS wygląda następująco (pipeline dla emoDB i TESS korzysta z nieco zmodyfikowanych skryptów csv_setter oraz dataset_setup, gdzie dla zbioru TESS nie ma podziału na sety, jest tylko jeden duży w pełni zbalansowany pod względem emocji zbiór użyty do treningu)
 ## Skrypt data_downloader
 - Pobranie podstawowych zbiorów danych (RAVDESS oraz nEMO)
 - Rozpakowanie pobranych nagrań do odpowiednich folderów
