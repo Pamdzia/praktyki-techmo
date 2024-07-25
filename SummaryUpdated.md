@@ -1,6 +1,7 @@
 **nEMO** - język polski
 **RAVDESS** - język angielski
 **emoDB** - język niemiecki
+**TESS** - język angielski
 
 ## mini legenda
 - klasyfikator_nEMO - model trenowany na zbiorze danych nEMO
@@ -21,6 +22,10 @@
 [wyniki precyzji dla modeli testowanych na zbiorze danych RAVDESS i trenowanych na RAVDESS/nEMO/RAVDESS+nEMO](https://github.com/Pamdzia/praktyki-techmo/blob/main/data-testing/precision_results_RAVDESS.txt)
 
 [wyniki precyzji dla modeli testowanych na zbiorze danych RAVDESS i trenowanych na emoDB](https://github.com/Pamdzia/praktyki-techmo/blob/main/data-testing/precision_results_emo_DB_RAVDESS.txt)
+
+[wyniki precyzji dla modeli testowanych na zbiorze danych RAVDESS i trenowanych na TESS](https://github.com/Pamdzia/praktyki-techmo/blob/main/data-testing/precision_results_TESS_RAVESS.txt)
+
+[wyniki precyzji dla modeli testowanych na zbiorze danych nEMO i trenowanych na TESS](https://github.com/Pamdzia/praktyki-techmo/blob/main/data-testing/precision_results_TESS_nEMO.txt)
 
 ## Testowanie na nEMO modeli trenowanych na RAVDESS
 - Większość modeli miała trudności z rozpoznawaniem emocji z precyzją powyżej 0.5. Żadna emocja nie osiągnęła precyzji powyżej 0.5 w żadnym z eksperymentów. Najlepiej rozpoznawane emocje to zazwyczaj "happy" (szczęśliwy) lub "sad" (smutny).
@@ -171,7 +176,50 @@ mlp_emo_DB (0.19)
 
 - Podsumowując, modele najlepiej radzą sobie z rozpoznawaniem emocji "angry", natomiast emocje "happy" i "sad" są najtrudniejsze do rozpoznania. Modele SVC_with_PCA oraz niektóre wersje kNN mają najwięcej trudności z dokładniejszym rozpoznaniem jakiejkowliek emozcji.
 
+## Testowanie na RAVDESS modeli trenowanych na TESS
+- w pięciu na osiem (SVC_tess, SVC_with_LDA_tess, SVC_with_PCA_tess, knn_lda_tess, knn_tess, knn_with_PCA_tess, mlp_tess, random_forest_tess) eksperymentów trenownaych na zbiorze danych TESS najwyższą precyzję uzyskała emocja "sad":
+SVC_tess (0.67)
+SVC_with_LDA_tess (0.52)
+SVC_with_PCA_tess (1.0)
+mlp_tess (0.8)
+random_forest_tess (0.75)
+
+- w eksperymentach z knn największą precyzję uzyskano dla emocji "neutral" i "angry":
+knn_lda_tess (angry: 0.5)
+knn_tess (neutral: 0.4)
+knn_with_PCA_tess (neutral: 0.55)
+
+- żadna emocja oprócz "happy" nie spadła w precyzji poniżej 0.2
+
+- eksperymenty z precyzją dla happy poniżej 0.2:
+SVC_tess (0.12)
+SVC_with_LDA_tess (0.18)
+SVC_with_PCA_tess (0.0)
+knn_with_PCA_tess (0.07)
+mlp_tess (0.14)
+
+- precyzja powyżej 0.5 dla emcoji "neutral" występowała także dla modeli:
+mlp_tess
+SVC_tess
+
+## Testowanie na nEMO modeli trenowanych na TESS
+- we wszystkich ośmiu eksperymentach (takich samych jak powyżej) najlepsze wyniki uzyskano dla emocji "sad":
+SVC_tess (0.76)
+SVC_with_LDA_tess (0.9)
+SVC_with_PCA_tess (0.78)
+knn_lda_tess (0.75)
+knn_tess (0.55)
+knn_with_PCA_tess (0.6)
+mlp_tess (0.87)
+random_forest_tess (0.84)
+
+- najlepsze wyniki uzyskano dla modeli SVC_with_LDA_tess i knn_lda_tess (oba modele z LDA !) gdize wszystkie emocje osiągnęy precyzje powyżej 0.5
+
+- w sześciu pozostałych eksperymentach emocja "angry" osiągnęła precyzję poniżej 0.2
+
 # WNIOSEK
 Język ma wpływ na skuteczność rozpoznawania emocji, co jest widoczne w tendencji, że modele trenowane na jednym języku mają ogromne trudności z rozpoznawaniem emocji w innym języku co może być spowodowane tym, że dane były z dwóch zupełnie innych zbiorów. Zbiory trenowane na jednym zbiorze, a testowane na drugim radziły sobie nienajgorzej z emocją "sad" co może dowodzić temu, że emocja smutku wyrażana w obu językach posiada podobne cechy. Modele wykazują wyższą skuteczność, gdy są trenowane i testowane na tym samym zbiorze danych (szczególnie dla zbioru danych w języku angielskim), jest to naturalne zjawisko aczkolwiek zbyt niskie wyniki (praktycznie zerowa precyzja w każdym modelu dla happy i neutral testowanych na języku angielskim i trenowanym na języku polskim) mogą świadczyć również o tym, że cechy emocji wyrażanych w obu językach są inne.
 
 Na podstawie wyników testów (język polski i angielski) modeli trenowanych na języku niemieckim można zauważyć, że w przypadku języka polskiego najlepiej rozpoznawaną emocją jest emocja smutku, potrafiła ona w 5 eksperyemtach osiagnąc precyzję równą 1, emocja złości uzyskiwała niską precyzję w wielu eksperymentach, tylko w jednym (random_forest_emo_db uzyskała precyzję pozwyżej 0.5) Podczas testowania na języku angielskim najlepsze wyniki uzyskano dla emocji złości. Emocja smutku natomiast wynosiła ponizej 0.2 w większości z eksperymentów, z tego wynika, że o ile emocja smutku zawiera podobne cechy w języku polskim i angielskim, cechy te różnią się na tyle, że podczas testowania na modelach, które były trenowane na innym języku emocja ta nie jest rozpoznawana w obu przypadkach.  
+
+Podczas testowania zbiorów nEMO i RAVDESS na modelach trenowanych na zbiorze danych TESS można zauważyć, że zarówno angielski jak i polski zbiór danych najelpiej radzi sobie dla emocji smutku, co może potwierdzać to, że oba języki posiadają najbardziej zbliżone cechy dla tej właśnie emocji. Modele testowane na zbiorze danych RAVDESS osiągały także nienajgorsze wyniki dla emocji "neutral", zgadza się to z wynikami modeli trenowanych i testowanych na zbiorze danych RAVDESS. Wyniki na tym drugim oczywiście są wyższe, co jest naturalnym zjawiskiem dla modeli trenowanych i testowanych na tym samym zbiorze danych. Modele testowane na zbiorze danych nEMO uzyskały lepsze wyniki precyzji (dla emocji smutku) dla modeli trenowanych na zbiorze danych TESS niż na zbiorze danych RAVDESS.
