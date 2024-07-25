@@ -9,6 +9,7 @@
 - klasyfikator_iemocap_impro - model treniwany na zbiorze danych IEMOCAP improwizacyjnych
 - klasyfikator_iemocap_script - model treniwany na zbiorze danych IEMOCAP skryptowych
 - klasyfikator_emo_db - model treniwany na zbiorze danych emoDB (język niemicki)
+- klasyfikator_tess - model trenowany na zbiorze danych TESS (język angielski)
 
 
 - MLP_from_git_updated - model Sequential z warstwami Dense i Dropout
@@ -162,6 +163,17 @@ na podstawie: [link](https://www.researchgate.net/publication/318009355_Cognitiv
 | English        | 27.08     | 50.00   | 89.58  | 70.83   | 59.37   |
 | Average        | 47.66     | 40.30   | 71.26  | 56.59   | 53.95   |
 
+
+# najlepsze wyniki dla modeli trenowanych na TESS
+- najlepsze wyniki dla zbioru danych RAVDESS uzyskał model random_forest_tess
+- najlepsze wyniki dla zbioru danych nEMO uzyskał model SVC_with_LDA_tess
+
+## najlepszy wynik (oba zbiory testowe) dla SVC_with_LDA_tess
+| Language       | Happiness | Sadness | Anger  | Neutral | Average |
+|----------------|-----------|---------|--------|---------|---------|
+| Polish         | 72.94     | 41.18   | 18.82  | 81.18   | 53.03   |
+| English        | 27.08     | 22.92   | 62.50  | 29.17   | 35.42   |
+| Average        | 50.01     | 32.05   | 40.66  | 55.18   | 44.22   |
 
 # WNIOSKI
 1. LDA w połączeniu z kNN daje lepsze wyniki (F1 = 71%) niż sam kNN (F1 = 51%) dla zbioru danych RAVDESS
