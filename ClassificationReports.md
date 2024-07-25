@@ -8,6 +8,8 @@
 - MLP_from_git_updated - model Sequential z warstwami Dense i Dropout
 - MLP_from_git_updated2 - model Sequential z warstwami Dense, Dropout i BatchNormalization
 
+- klasyfikator_tess - model trenowany na zbiorze danych TESS
+
 ## najlepszy wynik (oba zbiory testowe) dla kNN_connected
 ### classification report dla zbioru danych RAVDESS
 | Emotion  | Precision | Recall | F1-Score | Support | Class Accuracy |
