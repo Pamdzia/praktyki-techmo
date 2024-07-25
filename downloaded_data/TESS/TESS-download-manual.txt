@@ -1,0 +1,2 @@
+TESS is possible to download from Kaggle.com after registering: https://www.kaggle.com/datasets/ejlok1/toronto-emotional-speech-set-tess, 
+move downloaded wav folder to this location, it's path is praktyki-techmo/downloaded_data/TESS
