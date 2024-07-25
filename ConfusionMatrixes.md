@@ -6,6 +6,7 @@
 - klasyfikator_connected - model trenowany na obu (połączonych) zbiorach danych nEMO i RAVDESS
 - MLP_from_git_updated - model Sequential z warstwami Dense i Dropout
 - MLP_from_git_updated2 - model Sequential z warstwami Dense, Dropout i BatchNormalization
+- klasyfikator_tess - model trenowany na zbiorze danych TESS
 
 ## najlepszy wynik (oba zbiory testowe) dla kNN_connected
 ### macierz pomyłek dla zbioru danych RAVDESS
@@ -77,3 +78,9 @@
 ### macierz pomyłek dla zbioru danych nEMO
 ![image](https://github.com/user-attachments/assets/b1cfba2a-c328-469a-a4fb-2931b9e2b343)
 
+## najlepszy wynik (oba zbiory testowe) dla SVC_with_LDA_tess
+### macierz pomyłek dla zbioru danych RAVDESS
+![image](https://github.com/user-attachments/assets/c63ce695-7dee-4c2e-a87b-0f9fb0386315)
+
+### macierz pomyłek dla zbioru danych nEMO
+![image](https://github.com/user-attachments/assets/5e6e18d4-7383-4276-87ca-bd30247b4b16)
