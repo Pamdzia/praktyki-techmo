@@ -7,7 +7,8 @@
 - klasyfikator_iemocap_connected - model treniwany na zbiorze danych IEMOCAP połączonych (gra aktorska i improwizacja)
 - klasyfikator_iemocap_impro - model treniwany na zbiorze danych IEMOCAP improwizacyjnych
 - klasyfikator_iemocap_script - model treniwany na zbiorze danych IEMOCAP skryptowych
-- klasyfikator_emo_db - model treniwany na zbiorze danych emoDB (język niemicki)
+- klasyfikator_emo_db - model trenowany na zbiorze danych emoDB (język niemicki)
+- klasyfikator_tess - model trenowany na zbiorze danych TESS (język angielski)
 - MLP_from_git_updated - model Sequential z warstwami Dense i Dropout
 - MLP_from_git_updated2 - model Sequential z warstwami Dense, Dropout i BatchNormalization
   
@@ -104,3 +105,19 @@
 | 0.1007   | random_forest_iemocap_script       | nEMO         |
 | 0.3717   | random_forest_nEMO                 | RAVDESS      |
 | 0.3866   | random_forest_nEMO                 | nEMO         |
+| 0.3001   | SVC_tess                           | RAVDESS      |
+| 0.3557   | SVC_tess                           | nEMO         |
+| 0.3526   | SVC_with_LDA_tess                  | RAVDESS      |
+| 0.5152   | SVC_with_LDA_tess                  | nEMO         |
+| 0.2690   | SVC_with_PCA_tess                  | RAVDESS      |
+| 0.3705   | SVC_with_PCA_tess                  | nEMO         |
+| 0.3392   | knn_lda_tess                       | RAVDESS      |
+| 0.4894   | knn_lda_tess                       | nEMO         |
+| 0.3180   | knn_tess                           | RAVDESS      |
+| 0.2565   | knn_tess                           | nEMO         |
+| 0.2914   | knn_with_PCA_tess                  | RAVDESS      |
+| 0.2307   | knn_with_PCA_tess                  | nEMO         |
+| 0.3190   | mlp_tess                           | RAVDESS      |
+| 0.3240   | mlp_tess                           | nEMO         |
+| 0.4028   | random_forest_tess                 | RAVDESS      |
+| 0.1853   | random_forest_tess                 | nEMO         |
