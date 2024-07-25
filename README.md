@@ -13,7 +13,7 @@ Ninejszy projekt bazowany jest na artykule:
 
 Do pracy nad emocjami wykorzystywane są dane z niniejszych zbiorów 
 
-Główne zbiory eksperymentu badania różżmić między polskim i angielskim wykorzystywane do treningów oraz do wszystkich testów:
+Główne zbiory eksperymentu badania różnic między polskim i angielskim wykorzystywane do treningów oraz do wszystkich testów:
 - [RAVDESS](https://www.kaggle.com/datasets/uwrfkaggler/ravdess-emotional-speech-audio) - Język angielski
 - [nEMO](https://huggingface.co/datasets/amu-cai/nEMO) - Język polski
 
@@ -25,6 +25,7 @@ Dodatkowe zbiory treningowe
 - [SAVEE](https://www.kaggle.com/datasets/ejlok1/surrey-audiovisual-expressed-emotion-savee) - Język angielski
 - [JL-Corpus](https://www.kaggle.com/datasets/tli725/jl-corpus) - Język angielski
 - [MSP_Podcast](https://ecs.utdallas.edu/research/researchlabs/msp-lab/MSP-Podcast.html) - Język angielski
+- [TESS](https://www.kaggle.com/datasets/ejlok1/toronto-emotional-speech-set-tess)
 
 # 1. Przygotowanie środowiska do pracy
 
@@ -179,5 +180,7 @@ Napisano skrypt [best-emotions.py](https://github.com/Pamdzia/praktyki-techmo/bl
 Język ma wpływ na skuteczność rozpoznawania emocji, co jest widoczne w tendencji, że modele trenowane na jednym języku mają ogromne trudności z rozpoznawaniem emocji w innym języku co może być spowodowane tym, że dane były z dwóch zupełnie innych zbiorów. Zbiory trenowane na jednym zbiorze, a testowane na drugim radziły sobie nienajgorzej z emocją "sad" co może dowodzić temu, że emocja smutku wyrażana w obu językach posiada podobne cechy. Modele wykazują wyższą skuteczność, gdy są trenowane i testowane na tym samym zbiorze danych (szczególnie dla zbioru danych w języku angielskim), jest to naturalne zjawisko aczkolwiek zbyt niskie wyniki (praktycznie zerowa precyzja w każdym modelu dla happy i neutral testowanych na języku angielskim i trenowanym na języku polskim) mogą świadczyć również o tym, że cechy emocji wyrażanych w obu językach są inne.
 
 Na podstawie wyników testów (język polski i angielski) modeli trenowanych na języku niemieckim można zauważyć, że w przypadku języka polskiego najlepiej rozpoznawaną emocją jest emocja smutku, potrafiła ona w 5 eksperyemtach osiagnąc precyzję równą 1, emocja złości uzyskiwała niską precyzję w wielu eksperymentach, tylko w jednym (random_forest_emo_db uzyskała precyzję pozwyżej 0.5) Podczas testowania na języku angielskim najlepsze wyniki uzyskano dla emocji złości. Emocja smutku natomiast wynosiła ponizej 0.2 w większości z eksperymentów, z tego wynika, że o ile emocja smutku zawiera podobne cechy w języku polskim i angielskim, cechy te różnią się na tyle, że podczas testowania na modelach, które były trenowane na innym języku emocja ta nie jest rozpoznawana w obu przypadkach.
+
+Podczas testowania zbiorów nEMO i RAVDESS na modelach trenowanych na zbiorze danych TESS można zauważyć, że zarówno angielski jak i polski zbiór danych najelpiej radzi sobie dla emocji smutku, co może potwierdzać to, że oba języki posiadają najbardziej zbliżone cechy dla tej właśnie emocji. Modele testowane na zbiorze danych RAVDESS osiągały także nienajgorsze wyniki dla emocji "neutral", zgadza się to z wynikami modeli trenowanych i testowanych na zbiorze danych RAVDESS. Wyniki na tym drugim oczywiście są wyższe, co jest naturalnym zjawiskiem dla modeli trenowanych i testowanych na tym samym zbiorze danych. Modele testowane na zbiorze danych nEMO uzyskały lepsze wyniki precyzji (dla emocji smutku) dla modeli trenowanych na zbiorze danych TESS niż na zbiorze danych RAVDESS.
 
 
