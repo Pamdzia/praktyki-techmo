@@ -3,7 +3,7 @@ import pandas as pd
 from tqdm import tqdm
 
 # Ścieżka do folderu z plikami CSV
-input_folder_path = "/Users/maciejwylecial/Developer/praktyki-Techmo/12_07/praktyki-techmo/dataset_eval"
+input_folder_path = "dataset_eval"
 output_csv_path = "summary_accuracy.csv"
 
 # Lista do przechowywania wyników
