@@ -38,4 +38,3 @@ Dodatkowy krok pozwalający na wyciągnięcie wyników dla poszczególnych emocj
 - Uruchomić skrypt [Wav2Vec_speechbrain_eval](https://github.com/Pamdzia/praktyki-techmo/blob/main/dataset_eval/Wav2Vec_speechbrain_eval.py) uprzednio ustawiając ścieżki do wejściowej csvki, wyjściowej z wynikami oraz do folderu z nagraniami
 - Wyniki zapisywane są w pliku csv i mogą zostać dodatkowo przekształcone do wyciągania samego accuracy dla każdej emocji z wykorzystaniem [accuracy_eval](https://github.com/Pamdzia/praktyki-techmo/blob/main/dataset_eval/accuracy_eval.py) wczytującego pliki z podanej ścieżki na początku pliku.
 - Wyniki dla modelu HuBert zostały uzyskane w ramach pracy magisterskiej, stąd zostały dodane do folderu z ewaluacją na modelu Wav2Vec2
-- 
