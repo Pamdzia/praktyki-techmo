@@ -3,9 +3,9 @@ from tqdm import tqdm
 from speechbrain.inference.interfaces import foreign_class
 
 # Ścieżka do CSV z plikami dźwiękowymi
-input_csv_path = "/Users/maciejwylecial/Developer/praktyki-Techmo/12_07/praktyki-techmo/four_emotions_csvs_all/four_emotions_nEMO_features.csv"
+input_csv_path = "../four_emotions_csvs_all/four_emotions_nEMO_features.csv"
 output_csv_path = "wav2vec_nEMO.csv"
-base_audio_path = "/Users/maciejwylecial/Developer/praktyki-Techmo/12_07/praktyki-techmo/downloaded_data/nEMO/nEMO-main/samples/"
+base_audio_path = "../downloaded_data/nEMO/nEMO-main/samples/"
 
 # Inicjalizacja klasyfikatora
 classifier = foreign_class(
